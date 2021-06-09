@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!--  
+		지금부터 아래 Bean을 생성한다.
+		
+		Set<String> set = new HashSet<String>();
+		set.add("자바");
+		set.add("JSP");
+		set.add("SPRING");
+		set.add("SPRING"); // 중복으로 저장되지 않는다.
+		
+		SetBean setBean = new SetBean();
+		setBean.setSet(set);
+	-->
+
+
+	
+	
+	
+	
+	
+
+
+
+</beans>

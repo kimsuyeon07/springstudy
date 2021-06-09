@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!--  
+		지금부터 아래 Bean을 생성한다.
+		List<String> list = new ArrayList<>();
+		list.add("튀김");
+		list.add("떡볶이");
+		list.add("순대");
+		ListBean listBean = new ListBean();
+		listBean.setList(list);
+	-->
+
+	<bean id="listBean" class="ex03_xml.ListBean">
+		<property name="list">
+			<list>
+				<value>튀김</value>
+			</list>
+		</property>
+	</bean>
+
+
+
+</beans>

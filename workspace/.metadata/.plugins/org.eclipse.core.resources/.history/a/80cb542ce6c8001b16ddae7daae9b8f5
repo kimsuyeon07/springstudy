@@ -1,0 +1,15 @@
+package quiz02;
+
+public class MultiplicationTable {
+
+	/* 원하는 구구단을 보여준다. */
+	
+	// field (property)
+	private int startDan;
+	private int endDan;
+	private int StartNum;
+	private int endNum;
+	private Calculator calculator;
+	
+	
+}

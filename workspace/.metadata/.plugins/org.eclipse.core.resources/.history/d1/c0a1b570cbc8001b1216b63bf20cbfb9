@@ -1,0 +1,21 @@
+package ex01_xml;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class SpringMainClass {
+
+	public static void main(String[] args) {
+		// spring bean configuration file에 정의된 <bean>을 생성하는 클래스
+		// GenericXmlApplicationContext _'클래스' 사용
+		
+		// AbstractApplicationContent는 
+		// 	CenericXmlApplicationContext의 슈퍼클래스
+		
+		/* resourceLocations : [ src/main/resources ] */
+		String resourceLocations = "classpath:app-context1.xml";
+		AbstractApplicationContext ctx = new GenericXmlApplicationContext(resourceLocations);
+
+	}
+
+}

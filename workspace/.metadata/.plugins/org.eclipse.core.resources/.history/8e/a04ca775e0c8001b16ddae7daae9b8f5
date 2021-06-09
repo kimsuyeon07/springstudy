@@ -1,0 +1,32 @@
+package ex02_xml;
+
+public class Engine {
+
+	private String type;
+	private int cc;
+	private int hp;
+	private double efficiency;
+	
+	// constructor
+	public Engine() {}
+
+	public Engine(String type, int cc, int hp, double efficiency) {
+		super();
+		this.type = type;
+		this.cc = cc;
+		this.hp = hp;
+		this.efficiency = efficiency;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

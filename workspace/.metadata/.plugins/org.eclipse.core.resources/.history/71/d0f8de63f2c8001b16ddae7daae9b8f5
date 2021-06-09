@@ -1,0 +1,21 @@
+package ex03_xml;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class SpringMainClass {
+
+	public static void main(String[] args) {
+
+		String resourceLocation1 = "app-context3-1.xml";
+		AbstractApplicationContext ctx = new GenericXmlApplicationContext(resourceLocation1);
+		
+		ListBean listBean = ctx.getBean("listBean", ListBean.class);
+		listBean.info();
+		
+		ctx.close();
+		
+		
+	}
+
+}

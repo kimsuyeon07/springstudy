@@ -1,0 +1,45 @@
+package ex03_xml;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class SpringMainClass {
+
+	public static void main(String[] args) {
+
+		
+		/*
+		 * Set<> / List<>
+		 * .xml 생성과정이 비슷하다. 
+		 * (인터페이스_ 부모클래스가 동일하기 때문에)
+		 * 
+		 * Map< , > 은 다를 것이라는 의미. (부모클래스가 동일하지 않기 때문에)
+		 * */
+		
+		
+		
+		
+		String resourceLocation1 = "app-context3-1.xml";
+		String resourceLocation2 = "app-context3-2.xml";
+		
+		AbstractApplicationContext ctx = new GenericXmlApplicationContext(resourceLocation1, resourceLocation2);
+		
+		ListBean listBean = ctx.getBean("listBean", ListBean.class);
+		listBean.info();
+		
+		SetBean setBean = ctx.getBean("setBean", SetBean.class);
+		setBean.info();
+		
+		
+		ctx.close();
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

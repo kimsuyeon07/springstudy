@@ -1,0 +1,10 @@
+package quiz02;
+
+public class QuizMainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

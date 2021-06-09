@@ -1,0 +1,8 @@
+package quiz01;
+
+public class Car {
+
+	private String model;
+	private int price;
+	
+}

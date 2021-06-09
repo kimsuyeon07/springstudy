@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 
+		Namespaces 탭에서 옵션 p를 선택하면 
+		<property>지정을  <bean>태그의 속성으로 처리할 수 있다. 
+	-->
+	<!--  
+		<bean id="객체명" class="클래스명" p:필드명="값" />
+		
+		_
+		필드가 다른 객체인 경우 ↓
+		<bean id="객체명" class="클래스명" p:필드명-ref="객체명" />
+	-->
+
+
+
+
+
+</beans>

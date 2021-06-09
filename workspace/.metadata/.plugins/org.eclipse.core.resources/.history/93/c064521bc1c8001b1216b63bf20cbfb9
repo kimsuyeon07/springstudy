@@ -1,0 +1,17 @@
+package ex01_xml;
+
+public class EngineerCalculator {
+	
+	// 공학용 계산기
+	
+	// field (property)
+	private int num1;
+	private int num2;
+	private Calculator calculator;
+	
+	// constructor
+	public EngineerCalculator() {}
+	
+	
+	
+}

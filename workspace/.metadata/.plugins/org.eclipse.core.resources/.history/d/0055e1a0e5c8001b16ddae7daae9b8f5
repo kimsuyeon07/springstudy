@@ -1,0 +1,15 @@
+package quiz02;
+
+public class Calculator {
+
+	
+	// field (property) {X}
+	
+	// constructor (X)
+	
+	// method
+	public void info() {
+		
+	}
+	
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+	<!--  
+		지금부터 아래 Bean을 생성한다.
+		
+		Map<String ,String> dictionary = new HashMap<>();
+		dictionary.put("morning", "아침");
+		dictionary.put("afternoon", "오후");
+		dictionary.put("evening", "저녁");
+		
+		MapBean mapBean = new MapBean(); <클래스 객체 생성>
+		mapBean.setMap(dictionary);
+	-->
+	
+	<bean id="mapBean" class="ex03_xml.MapBean">
+		<property name="map">
+			<map>
+				
+			</map>
+		</property>
+	</bean>
+	
+	
+
+
+
+</beans>
