@@ -1,0 +1,15 @@
+package ex10_component;
+
+
+
+
+public class Book {
+
+	public void info() {
+		System.out.println("나는 책이다.");
+	}
+	
+	
+	
+	
+}

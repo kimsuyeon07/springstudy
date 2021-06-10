@@ -1,0 +1,30 @@
+package ex07_java_into_xml;
+
+public class Book {
+
+	// field
+	private String title;
+	private int price;
+	private Publisher publisher;
+
+	
+	// constructor
+	public Book() {}
+	public Book(String title, int price, Publisher publisher) {
+		super();
+		this.title = title;
+		this.price = price;
+		this.publisher = publisher;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

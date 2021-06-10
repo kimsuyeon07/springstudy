@@ -1,0 +1,73 @@
+package ex08_xml_into_java;
+
+import java.util.Map;
+
+public class Soldier {
+
+	// field
+	private String name; 
+	private Gun gun;
+	private Map<String, String> army;  // 부대정보
+	
+	
+	
+	// constructor
+	public Soldier() {}
+	public Soldier(String name, Gun gun, Map<String, String> army) {
+		super();
+		this.name = name;
+		this.gun = gun;
+		this.army = army;
+	}
+	
+	
+	// method
+	public void info() {
+		System.out.println("이름: " + name);
+		System.out.println("총 모델: " + gun.getModel());
+		System.out.println("총알 수: " + gun.getBullet());
+		for(Map.Entry<String, String> entry: army.entrySet()) {
+			
+		}
+	}
+	
+	
+	
+	
+	// Getter and Setter
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Gun getGun() {
+		return gun;
+	}
+	public void setGun(Gun gun) {
+		this.gun = gun;
+	}
+	public Map<String, String> getArmy() {
+		return army;
+	}
+	public void setArmy(Map<String, String> army) {
+		this.army = army;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,32 @@
+package ex05_java;
+
+public class Song {
+
+	
+	// field (property)
+	private String title;
+	private String gnere;
+	
+	// constructor
+	public Song() {}
+
+	public Song(String title, String gnere) {
+		super();
+		this.title = title;
+		this.gnere = gnere;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

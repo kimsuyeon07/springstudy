@@ -1,0 +1,23 @@
+package ex10_component;
+
+public class Person {
+
+	// field
+
+
+	public void info() {
+		System.out.println("나는 사람이다.");
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

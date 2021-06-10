@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!-- Publisher -->
+	<bean id="publisher1" class="ex07_java_into_xml.Publisher">
+		<constructor-arg>
+			<value>자바출판사</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>경기도 파주시</value>
+		</constructor-arg>
+	</bean>
+	
+	<!-- Book -->
+	<bean id="book1" class="ex07_java_into_xml.Book">
+		<property name="title" value="어린왕자" />
+		<property name="price" value="18000" />
+		<property name="publisher" ref="publisher1" />
+	</bean>
+	
+	
+	<!-- AppContext.java에서 생성한 Bean을 가져오기 -->
+	<!--  
+		1.
+		AppContext.java는 annotation(@Configuration, @Bean)을 이용해서 Bean을 생성하므로
+		<context:annotation-config />태그를 추가한다.
+		( 작업 수행을 위해서 Namespaces 탭에서 context를 선택한다. )
+		
+		2. 
+		<bean class="AppContext"
+	-->
+
+
+
+
+</beans>

@@ -1,0 +1,30 @@
+package ex08_xml_into_java;
+
+import java.util.Map;
+
+public class Soldier {
+
+	// field
+	private String name; 
+	private Gun gun;
+	private Map<String, String> army;  // 부대정보
+	
+	
+	
+	// constructor
+	public Soldier() {}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

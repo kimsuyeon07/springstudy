@@ -1,0 +1,27 @@
+package ex07_java_into_xml;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class SpringMainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		AbstractApplicationContext ctx1 = new GenericXmlApplicationContext("app-context.xml");
+		AbstractApplicationContext ctx2 = new AnnotationConfigApplicationContext(AppContext.class);
+		
+		Book book1 = ctx1.getBean("book1", Book.class);
+		Book book2 = ctx2.getBean("book2", Book.class);
+		
+		book1.info();
+		book2.info();
+		
+		ctx1.close();
+		ctx2.close();
+		
+		
+		
+	}
+
+}

@@ -5,7 +5,22 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-06-09T06:46:00Z</updated>
+  <updated>2021-06-09T09:57:00Z</updated>
+  <entry>
+    <title>Spring Framework 5.3.8 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/06/09/spring-framework-5-3-8-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>St?phane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2021-06-09:4463</id>
+    <updated>2021-06-09T09:57:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce that Spring Framework &lt;code&gt;5.3.8&lt;/code&gt; is available now.&lt;/p&gt;
+&lt;p&gt;Spring Framework &lt;code&gt;5.3.8&lt;/code&gt; includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.3.8"&gt;35 fixes and improvements&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Stay tuned for follow-up Spring Boot releases later this week.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.3.8/reference/html/"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - June 8th, 2021</title>
     <link rel="alternate" href="https://spring.io/blog/2021/06/08/this-week-in-spring-june-8th-2021" />
@@ -847,22 +862,6 @@ Artem&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-kafka/releases/tag/v2.5.13.RELEASE"&gt;https://github.com/spring-projects/spring-kafka/releases/tag/v2.5.13.RELEASE&lt;/a&gt;&lt;br/&gt;&lt;a href="https://github.com/spring-projects/spring-kafka/releases/tag/v2.6.8"&gt;https://github.com/spring-projects/spring-kafka/releases/tag/v2.6.8&lt;/a&gt;&lt;br/&gt;&lt;a href="https://github.com/spring-projects/spring-kafka/releases/tag/v2.7.1"&gt;https://github.com/spring-projects/spring-kafka/releases/tag/v2.7.1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Stay tuned for follow-up Spring Boot releases later this week.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://projects.spring.io/spring-kafka/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-kafka"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-kafka/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-kafka/docs/current/reference/html/"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring AMQP 2.2.17.RELEAE &amp; 2.3.7 available</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/05/17/spring-amqp-2-2-17-releae-2-3-7-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Artem Bilan</name>
-    </author>
-    <id>tag:spring.io,2021-05-17:4442</id>
-    <updated>2021-05-17T17:45:15Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce that Spring AMQP &lt;code&gt;2.3.7&lt;/code&gt; and &lt;code&gt;2.2.17.RELEASE&lt;/code&gt; are available now.&lt;/p&gt;
-&lt;p&gt;Both versions have some number of bug fixes and minor improvements together with upgrades to the latest minor dependencies.&lt;br/&gt;See their release notes for more information:&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-amqp/releases/tag/v2.2.17.RELEASE"&gt;https://github.com/spring-projects/spring-amqp/releases/tag/v2.2.17.RELEASE&lt;/a&gt;&lt;br/&gt;&lt;a href="https://github.com/spring-projects/spring-amqp/releases/tag/v2.3.7"&gt;https://github.com/spring-projects/spring-amqp/releases/tag/v2.3.7&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Stay tuned for follow-up Spring Boot releases later this week.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://projects.spring.io/spring-amqp/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-amqp"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-amqp/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-amqp/docs/current/reference/html/"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

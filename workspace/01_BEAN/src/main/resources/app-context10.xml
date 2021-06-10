@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+
+
+	<!-- Component를 찾을 수 있도록 스캔할 패키지를 알려줘야 한다. -->
+	<!--  
+			1단계 : Namespaces 탭에서 context를 추가한다.
+			2단계 : <context:component-scan> 태그를 작성한다.
+	-->
+
+
+
+	<context:component-scan base-package="ex10_component" />
+
+
+
+
+
+
+</beans>

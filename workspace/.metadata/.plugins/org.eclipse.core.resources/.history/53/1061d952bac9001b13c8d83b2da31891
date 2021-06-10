@@ -1,0 +1,39 @@
+package ex10_component;
+
+import org.springframework.stereotype.Component;
+
+
+
+
+/*
+ *	 	@Component
+ * 		1. Bean으로 만들 클래스를 직접 Bean으로 생성해준다.
+ * 		2. XML아나 Java로 별도 생성하지 않아도 생성된다. 
+ * 		
+*/
+
+
+
+
+@Component
+public class Person {
+
+	// field
+
+
+	public void info() {
+		System.out.println("나는 사람이다.");
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

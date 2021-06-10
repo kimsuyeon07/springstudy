@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!--  
+			scope 속성
+			1. 기본 값은 singleton
+			2. prototype, request, session, application, websocket의 종류가 있다.
+			3. prototype : Bean을 요청할 때마다 생성해서 제공한다.
+	-->
+
+
+
+	<bean id="person1" class="ex09_scope.Person" scope="prototype">
+		<property name="name" value="에밀리" />
+		<property name="age" value="25" />
+	</bean>
+
+
+
+
+
+
+
+</beans>

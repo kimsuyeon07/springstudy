@@ -1,0 +1,15 @@
+package quiz05;
+
+public class HoneyMoon {
+
+	// field
+	private String city;
+	private Person husband;
+	private Person wife;
+	
+	
+	
+	
+	
+	
+}

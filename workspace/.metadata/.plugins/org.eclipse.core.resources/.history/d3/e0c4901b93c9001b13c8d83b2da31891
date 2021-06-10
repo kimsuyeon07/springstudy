@@ -1,0 +1,21 @@
+package ex07_java_into_xml;
+
+public class Publisher {
+
+	
+	// field (property)
+	private String name;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

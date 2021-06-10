@@ -1,0 +1,29 @@
+package ex04_xml;
+
+public class Member {
+	
+	// Getter and Setter
+	// method
+
+	
+	// field (property)
+	private String name;
+	private double height;
+	private double weight;
+	
+	
+	// constructor
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

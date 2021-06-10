@@ -1,0 +1,10 @@
+package ex08_xml_into_java;
+
+public class SpringMainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

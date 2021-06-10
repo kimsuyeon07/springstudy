@@ -1,0 +1,27 @@
+package quiz05;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
+
+
+@ImportResource("quiz05.xml")
+@Configuration
+public class AppContext {
+
+	@Bean(name="husband")
+	public Person husband() {
+		return new Person("브레드", "남자");
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

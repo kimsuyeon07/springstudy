@@ -1,0 +1,29 @@
+package ex09_scope;
+
+public class Person {
+	
+	// field
+	private String name;
+	private int age;
+	
+	
+	
+	// constructor
+	public Person() {}
+	public Person(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+	
+	// method
+	public void info() {
+		System.out.println("이름: " + name + ", 나이: " + age + "살");
+	}
+	
+	
+	
+	
+	
+
+}

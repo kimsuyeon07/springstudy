@@ -1,0 +1,10 @@
+package ex09_scope;
+
+public class SpringMainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,35 @@
+package ex04_xml;
+
+public class BMICalculator {
+
+	// Getter and Setter
+	// method
+
+	// field (property)
+	private double weight;
+	
+	
+	// constructor
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

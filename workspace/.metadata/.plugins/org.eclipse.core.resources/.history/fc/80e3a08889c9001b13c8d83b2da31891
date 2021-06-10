@@ -1,0 +1,24 @@
+package ex05_java;
+
+public class Singer {
+
+	// field
+	private String name;
+	private Song song;
+
+	
+	// constructor
+	public Singer() {}
+	
+	public Singer(String name, Song song) {
+		super();
+		this.name = name;
+		this.song = song;
+	}
+	
+	
+	
+	
+	
+	
+}

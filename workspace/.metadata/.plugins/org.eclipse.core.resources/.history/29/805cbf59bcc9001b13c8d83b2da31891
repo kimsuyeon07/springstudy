@@ -1,0 +1,20 @@
+package ex10_component;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class SpringMainClass {
+
+	public static void main(String[] args) {
+		
+		AbstractApplicationContext ctx = new GenericXmlApplicationContext("app-context10.xml");
+		
+		Person person = ctx.getBean("person", Person.class);
+		person.info();
+		
+		ctx.close();
+		
+
+	}
+
+}

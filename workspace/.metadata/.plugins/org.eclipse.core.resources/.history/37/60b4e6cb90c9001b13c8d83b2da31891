@@ -1,0 +1,25 @@
+package ex06_Java;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class Student {
+
+	
+	// 
+	private String name;
+	private List<Integer> scores;
+	private Set<String> volunteers;
+	private Map<String, String> home;
+	
+	
+	// method;
+	
+	
+	
+	
+	
+	
+	
+}
