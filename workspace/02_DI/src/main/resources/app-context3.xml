@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+
+	<context:annotation-config />
+
+	<!-- Bean_생성 -->
+<!-- 동일한 타입을 가진 bean이 여러 개인 경우 @Qualifier를 이용해서 구분한다. -->
+	<bean id="dao1" class="ex03_autowired.Dao">
+		<qualifier value="boardDao1" />
+	</bean>
+	<bean id="dao2" class="ex03_autowired.Dao">
+		<qualifier value="boardDao2" />
+	</bean>
+	<bean id="selectListCommand" class="ex03_autowired.SelectListCommand" />
+
+
+
+
+
+
+
+
+</beans>

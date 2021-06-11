@@ -24,11 +24,16 @@ public class SpringMainClass {
 		
 		AbstractApplicationContext ctx2 = new AnnotationConfigApplicationContext(AppContext.class);
 		
-		Person person2 = ctx.getBean("person", Person.class);
-		Book book2 = ctx.getBean("bk", Book.class);
+		Person person2 = ctx2.getBean("person", Person.class);
+		Book book2 = ctx2.getBean("bk", Book.class);
+		Computer com1 = ctx2.getBean("com", Computer.class);
+		Computer com2 = ctx2.getBean("com", Computer.class);
 		
 		person2.info();
 		book2.info();
+		com1.info();
+		
+		System.out.println(com1 == com2);
 		
 		ctx2.close();
 		
