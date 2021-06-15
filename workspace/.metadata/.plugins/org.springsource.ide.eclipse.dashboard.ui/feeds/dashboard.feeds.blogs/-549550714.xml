@@ -5,7 +5,97 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-06-10T22:00:00Z</updated>
+  <updated>2021-06-14T15:11:00Z</updated>
+  <entry>
+    <title>Spring Native 0.10.0 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/06/14/spring-native-0-10-0-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>S?bastien Deleuze</name>
+    </author>
+    <id>tag:spring.io,2021-06-14:4468</id>
+    <updated>2021-06-14T15:11:00Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the team and everyone who has contributed, I¡¯m happy to announce that Spring Native 0.10.0 has been released. It is based on &lt;a href="https://spring.io/blog/2021/05/20/spring-boot-2-5-is-now-ga"&gt;Spring Boot 2.5&lt;/a&gt; and &lt;a href="https://www.graalvm.org/release-notes/21_1/"&gt;GraalVM 21.1&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This release is packed with features, highlights include:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Introduction of native testing.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A new official Gradle plugin from the GraalVM team.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Introduction of ahead-of-time proxies usable on classes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It also includes &lt;a href="https://github.com/spring-projects-experimental/spring-native/releases/tag/0.10.0"&gt;43 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/starbuxman"&gt;Josh Long&lt;/a&gt; has crafted a great video to present those new features, so check this out:&lt;/p&gt;
+&lt;/div&gt;
+&lt;iframe style="display: block; margin: auto;" width="560" height="315" src="https://www.youtube-nocookie.com/embed/JsUAGJqdvaA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="native-testing-and-gradle-plugin"&gt;&lt;a class="anchor" href="#native-testing-and-gradle-plugin"&gt;&lt;/a&gt;Native testing and Gradle plugin&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We have been collaborating with the GraalVM team on bringing native image to the next level in terms of build plugins. The new &lt;a href="https://github.com/graalvm/native-build-tools"&gt;native build tools&lt;/a&gt; replace the former &lt;code&gt;native-image-maven-plugin&lt;/code&gt; and allow to build and test your native application using a local &lt;code&gt;native-image&lt;/code&gt; compiler.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;While only Maven support was previously available, now both Maven and Gradle plugins are provided. If you are upgrading, the new Maven plugin coordinates are &lt;code&gt;org.graalvm.buildtools:native-maven-plugin:0.9.0&lt;/code&gt;. After &lt;a href="https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/#_add_the_native_build_tools_plugin"&gt;configuring the native build tools plugin&lt;/a&gt;, you can build your application with &lt;code&gt;mvn -Pnative -DskipTests package&lt;/code&gt; or &lt;code&gt;gradle nativeBuild&lt;/code&gt;. But you can also run your JUnit 5 tests as a native image with &lt;code&gt;mvn -Pnative test&lt;/code&gt; or &lt;code&gt;gradle nativeTest&lt;/code&gt;. Spring Native itself  has been upgraded to add initial testing support so your &lt;code&gt;@SpringBootTest&lt;/code&gt; will run as a native image. This is an important milestone for native Spring Boot applications, but also for the JVM ecosystem including Spring itself which can now use those official plugins to improve the quality and the maintainability of the native support. You can read this &lt;a href="https://medium.com/graalvm/gradle-and-maven-plugins-for-native-image-with-initial-junit-testing-support-dde00a8caf0b"&gt;GraalVM dedicated blog post&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://start.spring.io"&gt;start.spring.io&lt;/a&gt; has been updated to configure the native build tools out-of-the-box in addition to the Buildpacks native support, so you can use the one that fits your needs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="ahead-of-time-proxies-usable-on-classes"&gt;&lt;a class="anchor" href="#ahead-of-time-proxies-usable-on-classes"&gt;&lt;/a&gt;Ahead-of-time proxies usable on classes&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With native images, proxies need to be defined at build time. Until now, Spring Native had just support for JDK proxies usable only on interfaces. Proxies on classes typically handled on the JVM via CGLIB proxies were not supported because generating bytecode at runtime is not supported in native world.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="java"&gt;// Typical security use case of a class proxy now supported on native
+@Service
+public class GreetingService {
+
+    public String hello() {
+        return "Hello!";
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    public String adminHello() {
+        return "Goodbye!";
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;But as of 0.10,  thanks to the amazing Andy Clement, proxies on classes can now be generated at build-time via the &lt;code&gt;@AotProxyHint&lt;/code&gt; annotation. Please notice the former &lt;code&gt;@ProxyHint&lt;/code&gt; has been renamed to &lt;code&gt;@JdkProxyHint&lt;/code&gt; to avoid confusion.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It allows to support security, transactions and a wide range of other proxy-based mechanisms on classes. Please notice we will refine auto-detection of such pattern to reduce the amount of explicit hints needed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="next-step-functional-configuration-aot-transformation"&gt;&lt;a class="anchor" href="#next-step-functional-configuration-aot-transformation"&gt;&lt;/a&gt;Next step : functional configuration AOT transformation&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Based on what we learnt in &lt;a href="https://github.com/spring-projects-experimental/spring-fu"&gt;Spring Fu&lt;/a&gt; and &lt;a href="https://github.com/spring-projects-experimental/spring-init"&gt;Spring Init&lt;/a&gt; experimental projects, our upcoming &lt;a href="https://github.com/spring-projects-experimental/spring-native"&gt;0.11 release&lt;/a&gt; will be focused on introducing functional configuration AOT transformation in order to reduce significantly the amount of reflection for Spring configuration infrastructure. The goal here is to transform Spring configuration in a way that could be understood out-of-the-box by the native image static analysis. This should both optimize the memory footprint and improve the native compatibility of Spring applications.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: Redgate technical lead for the Flyway team Mikiel Agutu on database migrations and continuous delivery</title>
     <link rel="alternate" href="https://spring.io/blog/2021/06/10/a-bootiful-podcast-redgate-technical-lead-for-the-flyway-team-mikiel-agutu-on-database-migrations-and-continuous-delivery" />
@@ -746,20 +836,6 @@ Plus it includes upgrades to the latest dependencies, including recently release
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Batch 4.2.7 and 4.3.3 are out!</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/05/19/spring-batch-4-2-7-and-4-3-3-are-out" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Mahmoud Ben Hassine</name>
-    </author>
-    <id>tag:spring.io,2021-05-19:4447</id>
-    <updated>2021-05-19T21:24:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who contributed, I am pleased to announce that Spring Batch 4.2.7 and 4.3.3 have been released and are available now from Maven Central repository. These patch releases come with a number of bug fixes, improvements and dependency updates. You can find the complete change logs here: &lt;a href="https://github.com/spring-projects/spring-batch/releases/tag/4.2.7.RELEASE"&gt;4.2.7&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-batch/releases/tag/4.3.3"&gt;4.3.3&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I would like to thank all contributors who had a role in these releases!&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-batch"&gt;Spring Batch Home&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-batch"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-batch/docs/4.3.x/reference/pdf/spring-batch-reference.pdf"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <servers>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v8.5 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v8.5 Server at localhost" name="Tomcat v8.5 Server at localhost" runtime-id="Apache Tomcat v8.5" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="3">
-    <list key="modules" value0="03_MVC_OVERVIEW::org.eclipse.jst.jee.server:03_MVC_OVERVIEW::jst.web::2.5" value1="04_MVC_BEAN::org.eclipse.jst.jee.server:04_MVC_BEAN::jst.web::2.5"/>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v8.5 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v8.5 Server at localhost" name="Tomcat v8.5 Server at localhost" runtime-id="Apache Tomcat v8.5" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="6">
+    <list key="modules" value0="05_MVC_REQUEST::org.eclipse.jst.jee.server:05_MVC_REQUEST::jst.web::2.5" value1="06_MVC_REDIRECT::org.eclipse.jst.jee.server:06_MVC_REDIRECT::jst.web::2.5" value2="07_MVC_AJAX::org.eclipse.jst.jee.server:07_MVC_AJAX::jst.web::2.5"/>
   </server>
 </servers>
