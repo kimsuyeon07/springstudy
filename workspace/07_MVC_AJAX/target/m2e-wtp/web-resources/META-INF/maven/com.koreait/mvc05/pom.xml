@@ -18,11 +18,18 @@
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<!-- * 삽입한 디펜던시 * -->
 		<!-- bean과 json 데이터를 쉽게 상호 변환해 주는 라이브러리 -->
-		<dependency>
+		<!-- <dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
 		    <version>2.9.8</version>
+		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
+		<dependency>
+		    <groupId>org.codehaus.jackson</groupId>
+		    <artifactId>jackson-mapper-asl</artifactId>
+		    <version>1.9.13</version>
 		</dependency>
+				
 				
 	
 	
