@@ -144,6 +144,21 @@ public class BoardDAO {
 	}
 	
 	
+	/* 게시글 삭제 */
+	public void deleteBoard(long no) {
+		try {
+			con = dataSource.getConnection();
+			sql = "DELETE FROM BOARD WHERE NO = ?";
+			ps = con.prepareStatement(sql);
+			ps.setLong(1, no);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(con, ps, null);
+		}
+	}
+	
 	
 	
 	
