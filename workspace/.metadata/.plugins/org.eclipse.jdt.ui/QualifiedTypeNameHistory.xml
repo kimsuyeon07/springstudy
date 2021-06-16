@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="ex05_java.Singer"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
-<fullyQualifiedTypeName name="ex06_Java.Student"/>
-<fullyQualifiedTypeName name="ex07_java_into_xml.Publisher"/>
-<fullyQualifiedTypeName name="ex07_java_into_xml.Book"/>
-<fullyQualifiedTypeName name="java.util.Map.Entry"/>
-<fullyQualifiedTypeName name="java.util.Set"/>
-<fullyQualifiedTypeName name="ex08_xml_into_java.Gun"/>
-<fullyQualifiedTypeName name="ex08_xml_into_java.AppContext"/>
-<fullyQualifiedTypeName name="ex08_xml_into_java.Soldier"/>
-<fullyQualifiedTypeName name="quiz04.Lecture"/>
-<fullyQualifiedTypeName name="quiz04.Student"/>
-<fullyQualifiedTypeName name="org.springframework.context.annotation.ImportResource"/>
-<fullyQualifiedTypeName name="quiz05.Person"/>
-<fullyQualifiedTypeName name="quiz05.AppContext"/>
-<fullyQualifiedTypeName name="quiz05.HoneyMoon"/>
 <fullyQualifiedTypeName name="ex09_scope.AppContext"/>
 <fullyQualifiedTypeName name="ex09_scope.Person"/>
 <fullyQualifiedTypeName name="java.util.jar.Attributes.Name"/>
@@ -41,10 +25,7 @@
 <fullyQualifiedTypeName name="com.koreait.mvc02.dto.BeanConfiguration"/>
 <fullyQualifiedTypeName name="com.koreait.mvc02.dto.Member"/>
 <fullyQualifiedTypeName name="javax.servlet.jsp.PageContext"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
 <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
-<fullyQualifiedTypeName name="java.util.Map"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="javax.annotation.Resource"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
@@ -55,9 +36,28 @@
 <fullyQualifiedTypeName name="org.springframework.context.support.AbstractApplicationContext"/>
 <fullyQualifiedTypeName name="org.springframework.context.annotation.AnnotationConfigApplicationContext"/>
 <fullyQualifiedTypeName name="com.koreait.mvc03.configuration.BeanConfiguration"/>
+<fullyQualifiedTypeName name="com.koreait.mvc03.quiz.BoardDTO"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="javax.xml.crypto.Data"/>
 <fullyQualifiedTypeName name="com.koreait.mvc03.dto.Person"/>
-<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="com.koreait.mvc03.quiz.Board"/>
+<fullyQualifiedTypeName name="org.springframework.validation.BindingResult"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="com.koreait.mvc03.dto.Member"/>
 <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthSeparatorUI"/>
+<fullyQualifiedTypeName name="com.koreait.mvc04.dto.Person"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.support.RedirectAttributes"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+<fullyQualifiedTypeName name="com.koreait.mvc05.dto.Person"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
 </qualifiedTypeNameHistroy>

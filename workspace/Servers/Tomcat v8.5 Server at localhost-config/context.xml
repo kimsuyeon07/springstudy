@@ -25,4 +25,31 @@
     <!--
     <Manager pathname="" />
     -->
+    
+    
+    <!-- **추가작업** -->
+    <!-- oracle xe -->
+    <Resource
+    	name="jdbc/oracle"
+    	type="javax.sql.DataSource"
+    	driverClassName="oracle.jdbc.OracleDriver"
+    	url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
+    	username="spring"
+    	password="1111"
+    	maxTotal="8"
+    	maxIdle="2"
+    	maxWaitMillis="5000" 
+    />
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 </Context>
