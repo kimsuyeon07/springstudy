@@ -5,4 +5,11 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
+	<!-- command를 bean으로 등록해 둔다 -->
+		<!-- 객체를 만드는 것이기 때문에 >> 소문자로 시작 -->
+	<bean id="boardListCommand" class="com.koreait.board01.command.BoardListCommand" /> 
+	<bean id="insertBoardCommand" class="com.koreait.board01.command.InsertBoardCommand" />
+	<bean id="selectBoardByNoCommand" class="com.koreait.board01.command.SelectBoardByNoCommand" />
+	<bean id="updateBoardCommand" class="com.koreait.board01.command.UpdateBoardCommand" />
+	<bean id="deleteBoardCommand" class="com.koreait.board01.command.DeleteBoardCommand" />
 </beans>

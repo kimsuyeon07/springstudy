@@ -5,7 +5,33 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-06-14T15:11:00Z</updated>
+  <updated>2021-06-16T10:18:00Z</updated>
+  <entry>
+    <title>This Week in Spring - June 15th, 2021</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/06/16/this-week-in-spring-june-15th-2021" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2021-06-16:4469</id>
+    <updated>2021-06-16T10:18:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! How&amp;rsquo;re you doing? I&amp;rsquo;m silly stoked! This week saw the release of Spring Native 0.10.0 and it is &lt;em&gt;awesome&lt;/em&gt;! You absolutely have to check this release out. I put together an &lt;a href="https://www.youtube.com/watch?v=JsUAGJqdvaA"&gt;episode of Spring Tips&lt;/a&gt;, the most comprehensive of its kind, introducing (almost) everything you&amp;rsquo;ll need to know about Spring Native and Spring Native 0.10.0 in particular. Start here. Spring Native is awesome and this is the comprehensive introduction I wish I&amp;rsquo;d had at the start. &lt;/p&gt;
+&lt;p&gt;The next time we meet in this humble column, next week, will be June 22nd, and by then we&amp;rsquo;ll have passed summer solstice - the longest day in the year! - and the beginning of summer. Farewell (for now) to Spring, the season, and long live Spring, the easiest and most productive path to production for your applications. &lt;/p&gt;
+&lt;p&gt;Anyway, my friends, we&amp;rsquo;ve got a ton of things to look at this week, starting of course with that Spring Native video and release announcement, of course, so let&amp;rsquo;s get to it! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;In this week&amp;rsquo;s installment of Spring Tips, I look at &lt;a href="https://spring.io/blog/2021/06/14/spring-native-0-10-0-available-now"&gt;Spring Native 0.10.0, available now&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/10/a-bootiful-podcast-redgate-technical-lead-for-the-flyway-team-mikiel-agutu-on-database-migrations-and-continuous-delivery"&gt;A Bootiful Podcast: Redgate technical lead for the Flyway team Mikiel Agutu on database migrations and continuous delivery&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/yanashin18618/status/1404198914643750917?s=12"&gt;An updated Spring Cloud GCP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blogs.vmware.com/vmworld/2021/06/imagine-that-register-for-vmworld-2021-now.html"&gt;Register for VMworld 2021 Now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;And while you&amp;rsquo;re at it, register for &lt;a href="https://springone.io"&gt;SpringOne&lt;/a&gt;, too!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/10/spring-boot-2-3-12-release-available-now"&gt;Spring Boot 2.3.12.RELEASE available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/10/spring-boot-2-4-7-available-now"&gt;Spring Boot 2.4.7 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/10/spring-boot-2-5-1-is-now-available"&gt;Spring Boot 2.5.1 is now available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/09/spring-framework-5-3-8-available-now"&gt;Spring Framework 5.3.8 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/VMware/status/1403028076716494864"&gt;Do you need help making sense of Kubernetes? Here&amp;rsquo;s your chance to ask Kubernetes co-creator Joe Beda anything during this live event&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Native 0.10.0 available now</title>
     <link rel="alternate" href="https://spring.io/blog/2021/06/14/spring-native-0-10-0-available-now" />
@@ -778,64 +804,6 @@ Plus it includes upgrades to the latest dependencies, including recently release
 &lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.3.11.RELEASE"&gt;52 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.3.11.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Web Services 3.1.1 is out!</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/05/20/spring-web-services-3-1-1-is-out" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Greg L. Turnquist</name>
-    </author>
-    <id>tag:spring.io,2021-05-20:4452</id>
-    <updated>2021-05-20T07:00:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;Greetings Spring community,&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The Spring Web Services team has released &lt;strong&gt;3.1.1&lt;/strong&gt;. This is the first major release under the new versioning schema. Releases will no longer have &lt;code&gt;.RELEASE&lt;/code&gt; and snapshots will only be &lt;code&gt;-SNAPSHOT&lt;/code&gt;, to better comply with community approaches.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;While we strive to maintain alignment with Spring Framework and Spring Security, we also test against Java 8, Java 11, and Java LATEST (JDK 16 as of today).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;For more details, read the following release notes for each version:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="release-notes-spring-web-services-version-3-1-1"&gt;&lt;a class="anchor" href="#release-notes-spring-web-services-version-3-1-1"&gt;&lt;/a&gt;Release Notes - Spring Web Services - Version 3.1.1.&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;#1198 - Test against JDK 16 on CI.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;#1197 - Upgrade to Spring Framework 5.3.7.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;#1187 - Upgrade to Spring Security 5.5.0.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;#1199 - Don&amp;#8217;t skip main build targets during releases.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Links: &lt;a href="https://spring.io/projects/spring-ws/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-ws"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-ws/issues"&gt;Issues&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The artifacts are located on Maven Central. Get it while it&amp;#8217;s hot!&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="springone-2021-is-coming"&gt;&lt;a class="anchor" href="#springone-2021-is-coming"&gt;&lt;/a&gt;SpringOne 2021 is coming&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The hottest Spring conference is right around the corner. Spring developers from around the globe will sign in. It&amp;#8217;s still not too late to &lt;a href="https://springone.io/register"&gt;register&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

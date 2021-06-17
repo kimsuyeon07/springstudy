@@ -21,7 +21,7 @@ import com.koreait.board01.command.SelectBoardByNoCommand;
 import com.koreait.board01.command.UpdateBoardCommand;
 import com.koreait.board01.dto.Board;
 
-@Controller
+// @Controller
 public class BoardController {
 
 	/* field */
@@ -31,6 +31,7 @@ public class BoardController {
 	// com.koreait.baord01.command >> BoardCommand(인터페이스)
 	
 	
+	/* index.jsp 이동 */
 	@GetMapping(value="/")  // @GetMapping == @RequestMapping(value="/", method=RequestMethod.GET)
 	public String index() {
 		logger.info("index() 호출");

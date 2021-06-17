@@ -14,6 +14,16 @@
 		<org.slf4j-version>1.7.25</org.slf4j-version>
 	</properties>
 	<dependencies>
+	
+		<!-- ** CGLIB 추가 ** -->
+		<!-- https://mvnrepository.com/artifact/cglib/cglib -->
+		<dependency>
+		    <groupId>cglib</groupId>
+		    <artifactId>cglib</artifactId>
+		    <version>2.2.2</version>
+		</dependency>
+		
+	
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>

@@ -1,0 +1,104 @@
+DBCP을 활용한 간단 게시판 작성
+
+1. web.xml 아래 태그를 추가한다. (인코딩)
+	 <!-- 인코딩 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
+2. pom.xml 최신화를 진행한다.
+		: 버전 수정_이미지 보고 확인 (STS버전최신화:폴더)
+	
+	
+3. ojdbc : Oracle JDBC
+	* 아래 2가지 중 한 가지만 사용한다. *
+	1) pom.xml 디펜던시 추가하기				   >> 특정 프로젝트만 수정하겠다.
+			: <repositories>
+					<repository>
+						<id>oracle</id>
+						<name>Oracle JDBC Repository</name>
+					  * <url>https://maven.jahia.org/maven2</url>
+					</repository>
+			  </repositories>
+			  <dependencies>
+				  	<!-- ojdbc6.jar -->
+				  	<dependency>
+				  		<groupId>com.oracle</groupId>
+				  		<artifactId>ojdbc6</artifactId>
+				  		<version>12.1.0.2</version>
+				  	</dependency>
+			  </dependencies>
+	2) tomcat\lib 디렉터리에 ojdbc6.jar 추가하기   >> 프로젝트 상관없이 모든 해당 tomcat을 사용하는 프로젝트를 다 적용시키겠다.
+	
+	
+	4. spring-jdbc 디펜던시를 추가한다. spring-framework 버전과 맞춘다.
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>${org.springframework-version}</version>
+		    ( ↑ == <version>5.1.4.RELEASE</version> )
+		</dependency>
+			
+	
+	
+	5. DataSource를 사용하는 JdbcTemplate template bean을 생성한다.
+		1) root-context.xml
+		<bean id="dataSource" class="...DriverManagerDataSource">
+			/* template을 만들기 위한 재료 준비 */
+			<property name="driverClassName" value="oracle.jdbc.OracleDriver" />
+			<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
+			<property name="username" value="spring" />
+			<property name="password" value="1111" /> 
+		</bean>
+		
+		<bean id="template" class="JdbcTemplate">
+			<property name="dataSource" ref="dataSource" />
+		</bean>
+		
+		2) BeanComfiguration.java
+		@Bean
+		public DriverManagerDataSource dataSource() {
+			DriverManagerDataSource dataSource = new DriverManager();
+			dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
+			dataSource.setDriverUrl("jdbc:oracle:thin:@127.0.0.1:1521:xe");
+			dataSource.setUsername("spring");
+			dataSource.setPassword("1111");
+			return dataSource;
+		}
+		@Bean
+		public JdbcTemplate template() {
+			JdbcTemplate template = new JdbcTemplate();
+			tamplate.setDataSource( dataSource() );
+			return template;
+		}
+		    	
+		    	
+		    	name="jdbc/oracle"
+		    	type="javax.sql.DataSource"
+		    	driverClassName="oracle.jdbc.OracleDriver"
+		    	url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
+		    	username="spring"
+		    	password="1111"
+		    	maxTotal="8"
+		    	maxIdle="2"
+		    	maxWaitMillis="5000" 
+	 
+	
+	
+	
+	

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	
+	
+	<!-- root-context.xml 가장 먼저 생성되는 bean -->
+	<!-- JdbcTemplate 생성 후 boardDAO 생성 가능하므로 BoardDAO bean 생성을 servlet-context.xml에서 처리한다 -->
+	
+	<!-- JdbcTemplate template -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
+		<property name="username" value="spring" />
+		<property name="password" value="1111" />
+	</bean>
+	<bean id="template" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	
+	
+</beans>

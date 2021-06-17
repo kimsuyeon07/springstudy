@@ -1,2 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+<typeInfo handle="=08_BOARD/src\/main\/java&lt;com.koreait.board01.command{BoardCommand.java[BoardCommand" modifiers="513" timestamp="1623813874529"/>
+<typeInfo handle="=09_BOARD/src\/main\/java&lt;com.koreait.board02.command{BoardCommand.java[BoardCommand" modifiers="513" timestamp="1623896509874"/>
+</typeInfoHistroy>

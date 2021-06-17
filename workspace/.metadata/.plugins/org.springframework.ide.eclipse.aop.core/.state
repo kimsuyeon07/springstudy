@@ -6,5 +6,7 @@
 <aop-project name="02_DI"/>
 <aop-project name="04_MVC_BEAN"/>
 <aop-project name="07_MVC_AJAX"/>
+<aop-project name="08_BOARD"/>
 <aop-project name="03_MVC_OVERVIEW"/>
+<aop-project name="09_BOARD"/>
 </aop-reference-model>
