@@ -68,13 +68,12 @@ public class ContactController {
 	
 	/* 연락처 등록 */
 	@PostMapping(value="insertContact.do")
-	public String insertContact(Contact contact, HttpServletResponse response ,Model model) {
+	public void insertContact(Contact contact, HttpServletResponse response ,Model model) {
 		
 		model.addAttribute("contact", contact);
 		model.addAttribute("response", response);
 		insertContactCommand.execute(model);
 		
-		return "redirect:selectContactList.do";
 	}
 
 	/* 연락처 조회 */

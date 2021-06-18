@@ -2,4 +2,6 @@
 <typeInfoHistroy>
 <typeInfo handle="=08_BOARD/src\/main\/java&lt;com.koreait.board01.command{BoardCommand.java[BoardCommand" modifiers="513" timestamp="1623813874529"/>
 <typeInfo handle="=09_BOARD/src\/main\/java&lt;com.koreait.board02.command{BoardCommand.java[BoardCommand" modifiers="513" timestamp="1623896509874"/>
+<typeInfo handle="=10_CONTACT/src\/main\/java&lt;com.koreait.contact01.command{ContactCommand.java[ContactCommand" modifiers="513" timestamp="1623977018019"/>
+<typeInfo handle="=11_CONTACT/src\/main\/java&lt;com.koreait.contact02.command{ContactCommand.java[ContactCommand" modifiers="513" timestamp="1623993720455"/>
 </typeInfoHistroy>

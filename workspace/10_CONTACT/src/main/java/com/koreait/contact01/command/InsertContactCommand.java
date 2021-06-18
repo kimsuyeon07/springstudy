@@ -1,6 +1,5 @@
 package com.koreait.contact01.command;
 
-import java.io.PrintWriter;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
@@ -24,24 +23,23 @@ public class InsertContactCommand implements ContactCommand {
 		int result = ContactDAO.getInstance().insertContact(contact);
 		
 		// 응답 View
-		PrintWriter out = response.getWriter();
-		if (result > 0) {
-			out.println("<script>");
-			out.println("alert('연락처 등록이 완료되었습니다.')");
-			out.println("location.href='selectContactList.do'");
-			out.println("</script>");
-		} else {
-			out.println("<script>");
-			out.println("alert('연락처 등록에 실패했습니다.')");
-			out.println("location.href='selectContactList.do'");
-			out.println("</script>");
-			
+		response.setContentType("text/html; charset=UTF-8");
+		try {
+			if (result > 0) {
+				response.getWriter().println("<script>");
+				response.getWriter().println("alert('연락처 등록이 완료되었습니다.')");
+				response.getWriter().println("location.href='selectContactList.do'");
+				response.getWriter().println("</script>");
+			} else {
+				response.getWriter().println("<script>");
+				response.getWriter().println("alert('연락처 등록에 실패했습니다.')");
+				response.getWriter().println("history.back()");
+				response.getWriter().println("</script>");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		
-		// model에 결과값 담아주기
-		model.addAttribute("insertResult", result);
-		
-
 	}
 
 }
