@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- 
+		참고. JSP에서 처리한 방법
+		<mapper namespace = "com.koreait.board03.dao.board"> mapper 자신으로 입력
+		</mapper>
+ -->
+
+
+<!-- mapper를 BaordDAO와 직접 연결한다. -->
+<mapper namespace="com.koreait.board03.dao.BoardDAO">
+
+	<!-- BoardDAO method == board.xml mapper id -->
+	<!-- 
+		BoardDAO의 [ public List<Board> selectBoardList(); ] 
+		id="selectBoardList" : selectBoardList()
+		resultType="com.koreait.board03.dto.Board" : List<Board>
+	-->
+	<select id="selectBoardList" resultType="com.koreait.board03.dto.Board">
+		SELECT NO, WRITER, TITLE, CONTENT, POSTDATE
+		  FROM BOARD
+		 ORDER BY NO DESC
+	</select>
+	
+	
+	<!-- BoardDAO의 [ public Board selectBoardByNo(long no); ] -->
+	<!-- ↓ parameterType="..."은 생략 가능! -->
+	<!-- #{param1} : 이름을 확인하지 않고, 전달받은 파라미터의 첫번째값을 가지고 오겠다. -->
+	<!-- 
+		${..}를 사용하는 경우 __ 칼럼을 비교하기위해서 사용하는 경우가 대부분 이다.
+		대부분의 변수는 #{..}으로 진행한다. 
+	-->
+	<select id="selectBoardByNo" resultType="com.koreait.board03.dto.Board">
+		SELECT NO, WRITER, TITLE, CONTENT, POSTDATE
+		  FROM BOARD
+		 WHERE NO = #{param1}
+	</select>
+	
+	
+	<!-- insert, update, delete는 resultType 작성하지 않는다. -->
+	<!-- ↑ parameterType="..."은 생략 가능! -->
+
+
+	<!-- BoardDAO의 [ public void insertBoard(Board board); ] -->
+	<insert id="insertBoard">
+		INSERT INTO BOARD 
+		VALUES (BOARD_SEQ.NEXTVAL, #{writer}, #{title}, #{content}, SYSDATE)
+	</insert>
+
+	<!-- BoardDAO의 [ public void insertBoard2(String writer, String title, String content); ] -->
+	<insert id="insertBoard2">
+		INSERT INTO BOARD 
+		VALUES (BOARD_SEQ.NEXTVAL, #{param1}, #{param2}, #{param3}, SYSDATE)
+	</insert>
+	
+	
+	<!-- BoardDAO의 [ public void updateBoard(Board board); ] -->
+	<update id="updateBoard">
+		UPDATE BOARD
+		   SET TITLE = #{title}, CONTENT = #{content}
+		 WHERE NO = #{no}
+	</update>
+	<!-- BoardDAO의 [ public void updateBoard2(String title, String content, long no); ] -->
+	<update id="updateBoard2">
+		UPDATE BOARD
+		   SET TITLE = #{param1}, CONTENT = #{param2}
+		 WHERE NO = #{param3}
+	</update>
+	
+	
+	<!-- BoardDAO의 [ public void deleteBoard(long no); ] -->
+	<delete id="deleteBoard">
+		DELETE 
+		  FROM BOARD 
+		 WHERE NO = #{no}
+	</delete>
+	
+	
+	
+	
+	
+	
+
+</mapper>

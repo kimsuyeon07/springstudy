@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		
+	<!-- DBCP 처리하는 dataSource -->	
+	<!-- 
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
+		<property name="username" value="spring" />
+		<property name="password" value="1111" />
+	</bean>	
+	 -->
+		
+	<!-- SqlSessionFactory : (Class)SqlSessionFactoryBean -->
+	<!-- 
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" >
+		<property name="mapperLocations" value="classpath:com/koreait/board03/dao/*.xml" />
+		<property name="dataSource" ref="dataSource" />
+	</bean> 
+	-->
+	
+	<!-- 
+		sqlSession : (Class)SqlSessionTemplate 
+				   : 생성자를 통한 bean 생성 (해당 클래스 내에서 Getter&Setter)가 저장되어있지 않다 
+	-->
+	<!-- 
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory" />
+	</bean> 
+	-->
+	
+	
+	<!-- ****************************************************************************** -->
+	
+	
+	<!-- Command : Bean 생성 -->
+	<!-- id 로 구분하지 않기 때문에 상관없다. -->
+	<!-- 
+	<bean id="listCommand" class="com.koreait.board03.command.SelectBoardListCommand" />
+	<bean id="viewCommand" class="com.koreait.board03.command.SelectBoardViewCommand" />
+	
+	<bean id="insertCommand" class="com.koreait.board03.command.InsertBoardCommand" />
+	<bean id="insertCommand2" class="com.koreait.board03.command.InsertBoardCommand2" />
+	
+	<bean id="updateCommand" class="com.koreait.board03.command.UpdateBoardCommand" />
+	<bean id="updateCommand2" class="com.koreait.board03.command.UpdateBoardCommand2" />
+	
+	<bean id="deleteCommand" class="com.koreait.board03.command.DeleteBoardCommand" />
+	 -->
+		
+		
+</beans>

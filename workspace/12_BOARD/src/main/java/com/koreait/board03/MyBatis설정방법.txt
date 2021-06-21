@@ -1,0 +1,134 @@
+DBCP을 활용한 간단 게시판 작성
+
+1. web.xml 아래 태그를 추가한다. (인코딩)
+	 <!-- 인코딩 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+=====================================================	
+	
+2. pom.xml 최신화를 진행한다.
+		: 버전 수정_이미지 보고 확인 (STS버전최신화:폴더)
+		
+=====================================================	
+	
+3. ojdbc : Oracle JDBC
+	* 아래 2가지 중 한 가지만 사용한다. *
+	1) pom.xml 디펜던시 추가하기				   >> 특정 프로젝트만 수정하겠다.
+			: <repositories>
+					<repository>
+						<id>oracle</id>
+						<name>Oracle JDBC Repository</name>
+					  * <url>https://maven.jahia.org/maven2</url>
+					</repository>
+			  </repositories>
+			  <dependencies>
+				  	<!-- ojdbc6.jar -->
+				  	<dependency>
+				  		<groupId>com.oracle</groupId>
+				  		<artifactId>ojdbc6</artifactId>
+				  		<version>12.1.0.2</version>
+				  	</dependency>
+			  </dependencies>
+	2) tomcat\lib 디렉터리에 ojdbc6.jar 추가하기   >> 프로젝트 상관없이 모든 해당 tomcat을 사용하는 프로젝트를 다 적용시키겠다.
+	
+=====================================================	
+			
+4. MyBatis 디펜던시 : mybatis + mybaits-spring + spring-jdbc
+
+	↓
+	1) MyBatis 디펜던시를 추가한다. spring-framework 버전과 맞춘다.
+		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis</artifactId>
+		    <version>3.4.6</version>
+		</dependency>
+		
+	↓		
+	2) MyBatis Spring 디펜던시를 추가한다. spring-framework 버전과 맞춘다.
+		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis</artifactId>
+		    <version>3.4.6</version>
+		</dependency>
+		
+	↓
+	3) spring-jdbc 디펜던시를 추가한다. spring-framework 버전과 맞춘다.
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>${org.springframework-version}</version>
+		    ( ↑ == <version>5.1.4.RELEASE</version> )
+		</dependency>		
+	
+=====================================================	
+		
+5. mapper.xml를 준비한다. (install/jar/MYBATIS in)
+	com.koreait.board03.dao 패키지에 배치한다.	
+	(board.xml로 이름 변환)
+	
+=====================================================	
+		
+	
+	
+5. DataSource를 사용하는 sqlSessionTemplate template bean을 생성한다.
+	< 2가지 방법 중 한가지 선택 >
+	↓
+	1) root-context.xml
+		<!-- DBCP 처리하는 dataSource -->	
+		<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+			<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
+			<property name="username" value="spring" />
+			<property name="password" value="1111" />
+		</bean>	
+			
+		<!-- SqlSessionFactory : (Class)SqlSessionFactoryBean -->
+		<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" >
+			<property name="mapperLocations" value="classpath:com/koreait/board03/dao/*.xml" />
+			<property name="dataSource" ref="dataSource" />
+		</bean>
+		
+		<!-- 
+			sqlSession : (Class)SqlSessionTemplate 
+					   : 생성자를 통한 bean 생성 (해당 클래스 내에서 Getter&Setter)가 저장되어있지 않다 
+		-->
+		<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+			<constructor-arg ref="sqlSessionFactory" />
+		</bean>
+		
+	↓
+	2) BeanConfiguration.java (클래스파일_인터페이스를 담고있지 않다.)
+			    	
+		    	
+		    	name="jdbc/oracle"
+		    	type="javax.sql.DataSource"
+		    	driverClassName="oracle.jdbc.OracleDriver"
+		    	url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
+		    	username="spring"
+		    	password="1111"
+		    	maxTotal="8"
+		    	maxIdle="2"
+		    	maxWaitMillis="5000" 
+	 
+	
+	
+	
+	
