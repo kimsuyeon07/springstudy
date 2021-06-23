@@ -115,19 +115,51 @@ File 업로드/다운로드 활용한 간단게시판 작성
 			<constructor-arg ref="sqlSessionFactory" />
 		</bean>
 		
+		<!-- CommonsMultipartResolver -->
+		<!-- 1024 * 1024 * 10  == 10,485,760  -->
+		<bean id="multipartResolver" class="com.koreait.file.command.SelectBoardListCommand">
+			<property name="defaultEncoding" value="UTF-8" />
+			<property name="maxUploadSize" value="10,485,760" />
+		</bean>
+		
+		
 	↓
 	2) BeanConfiguration.java (클래스파일_인터페이스를 담고있지 않다.)
 			    	
-		    	
-		    	name="jdbc/oracle"
-		    	type="javax.sql.DataSource"
-		    	driverClassName="oracle.jdbc.OracleDriver"
-		    	url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
-		    	username="spring"
-		    	password="1111"
-		    	maxTotal="8"
-		    	maxIdle="2"
-		    	maxWaitMillis="5000" 
+		@Bean
+		public DriverManagerDataSource dataSource() {
+			DriverManagerDataSource dataSource = new DriverManagerDataSource();
+			dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
+			dataSource.setUrl("jdbc:oracle:thin:@127.0.0.1:1521:xe");
+			dataSource.setUsername("spring");
+			dataSource.setPassword("1111");
+			return dataSource;
+		}
+		
+		@Bean
+		public SqlSessionFactory sqlSessionFactory() throws Exception {
+			SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
+			sqlSessionFactory.setDataSource(dataSource());
+			sqlSessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:com/koreait/file/dao/*.xml"));
+			/* 
+			 * ... ( new PathMatchingResourcePatternResolver()
+			 * 			.getResources("classpath:com/koreait/contact03/dao/*.xml"));
+			 */
+			return sqlSessionFactory.getObject();
+		}
+		
+		@Bean
+		public SqlSessionTemplate sqlSession() throws Exception {
+			return new SqlSessionTemplate(sqlSessionFactory());
+		}
+		
+		@Bean
+		public CommonsMultipartResolver multipartResolver() {
+			CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+			multipartResolver.setDefaultEncoding("UTF-8");
+			multipartResolver.setMaxUploadSize(1024 * 1024 * 10); // 바이트 단위 (10MB)
+			return multipartResolver;
+		}
 
 =====================================================	
 

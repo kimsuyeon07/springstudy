@@ -1,3 +1,5 @@
+<%@page import="java.net.URLEncoder"%>
+<%@page import="com.koreait.file.dto.Board"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,8 +23,8 @@
 		<p>내용</p>
 		<input type="text" name="content" value="${board.content}">	<br>
 
-		<p>첨부</p> <!-- multiple : 다중 첨부 가능 -->
-			<br>
+		<p>첨부 이미지</p> <!-- multiple : 다중 첨부 가능 -->
+		<img alt="${board.filename}" src="resources/archive/${board.filename}" style="width:300px;">	<br>
 		
 		
 		
