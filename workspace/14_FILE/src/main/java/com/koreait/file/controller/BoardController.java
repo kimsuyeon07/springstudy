@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.koreait.file.command.DeleteBoardCommand;
 import com.koreait.file.command.DownloadCommand;
 import com.koreait.file.command.InsertBoardCommand;
 import com.koreait.file.command.SelectBoardListCommand;
+import com.koreait.file.command.UpdateBoardCommand;
 
 import selectBoardByNo.SelectboardViewCommand;
 
@@ -26,6 +28,8 @@ public class BoardController {
 	private InsertBoardCommand insertBoardCommand;
 	private DownloadCommand downloadCommand;
 	private SelectboardViewCommand selectBoardViewCommand;
+	private UpdateBoardCommand updateBoardCommand;
+	private DeleteBoardCommand deleteBoardCommand;
 	
 	// constructor  <Bean으로 생성된 값을 가지고 온다>
 	@Autowired
@@ -33,12 +37,16 @@ public class BoardController {
 						   SelectBoardListCommand selectBoardListCommand,
 						   InsertBoardCommand insertBoardCommand,
 						   DownloadCommand downloadCommand,
-						   SelectboardViewCommand selectBoardViewCommand) {
+						   SelectboardViewCommand selectBoardViewCommand,
+						   UpdateBoardCommand updateBoardCommand,
+						   DeleteBoardCommand deleteBoardCommand) {
 		this.sqlSession = sqlSession;
 		this.selectBoardListCommand = selectBoardListCommand;
 		this.insertBoardCommand = insertBoardCommand;
 		this.downloadCommand = downloadCommand;
 		this.selectBoardViewCommand = selectBoardViewCommand;
+		this.updateBoardCommand = updateBoardCommand;
+		this.deleteBoardCommand = deleteBoardCommand;
 	}
 	
 
@@ -80,8 +88,20 @@ public class BoardController {
 		return "board/viewBoard";
 	}
 	
+	@PostMapping(value="updateBoard.do")
+	public String updateBoard(MultipartHttpServletRequest multipartRequest, Model model) {
+		model.addAttribute("multipartRequest", multipartRequest);
+		updateBoardCommand.execute(sqlSession, model);
+		long no = Long.parseLong(multipartRequest.getParameter("no"));
+		return "redirect:selectBoardByNo.do?no=" + no ;
+	}
 	
-	
+	@PostMapping(value="deleteBoard.do")
+	public String deleteBoard(MultipartHttpServletRequest multipartRequest, Model model) {
+		model.addAttribute("multipartRequest", multipartRequest);
+		deleteBoardCommand.execute(sqlSession, model);
+		return "redirect:selectBoardList.do";
+	}
 	
 	
 	

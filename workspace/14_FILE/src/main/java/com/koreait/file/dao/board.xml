@@ -22,6 +22,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		VALUES (BOARD_SEQ.NEXTVAL, #{param1}, #{param2}, #{param3}, #{param4}, SYSDATE)
 	</insert>
 	
+	<update id="updateBoard">
+		UPDATE BOARD
+		   SET TITLE = #{param1}, 
+		   	   CONTENT = #{param2}, 
+		   	   FILENAME = #{param3}
+		 WHERE NO = #{param4}
+	</update>
+	
+	<delete id="deleteBoard">
+		DELETE FROM BOARD WHERE NO = #{param1}
+	</delete>
+	
 	
 	
 

@@ -23,8 +23,10 @@ public class SelectboardViewCommand implements BoardCommand {
 		
 		BoardDAO boardDAO = sqlSession.getMapper(BoardDAO.class);
 		Board board = boardDAO.selectBoardByNo(no);
+		String filename = board.getFilename();
 
 		model.addAttribute("board", board);
+		model.addAttribute("filename", filename);
 		
 	}
 

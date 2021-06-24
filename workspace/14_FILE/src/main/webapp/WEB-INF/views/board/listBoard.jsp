@@ -50,6 +50,13 @@
 			</c:if>
 		</tbody>
 		
+		<tfoot>
+			<tr>
+				<td></td>
+			</tr>
+		</tfoot>
+		
+		
 	</table>
 
 </body>

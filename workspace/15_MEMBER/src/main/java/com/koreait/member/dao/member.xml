@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.koreait.member.dao.MemberDAO">
+	
+	
+	<select id="idCheck" resultType="int">
+		SELECT COUNT(ID)
+		  FROM MEMBER
+		 WHERE ID = #{id}
+	</select>
+	
+	
+	
+	
+	<select id="selectMemberList" resultType="com.koreait.member.dto.Member">
+		SELECT NO, ID, PW, NAME, REGDATE 
+		  FROM MEMBER
+		 ORDER BY NO DESC
+	</select>
+	
+	<select id="selectMemberByNo" resultType="com.koreait.member.dto.Member">
+		SELECT NO, ID, PW, NAME, REGDATE 
+		  FROM MEMBER
+		 WHERE NO = #{param1}
+	</select>
+	
+</mapper>
