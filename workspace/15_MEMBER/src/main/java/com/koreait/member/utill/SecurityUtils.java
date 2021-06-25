@@ -1,4 +1,4 @@
-package com.koreait.member.command;
+package com.koreait.member.utill;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

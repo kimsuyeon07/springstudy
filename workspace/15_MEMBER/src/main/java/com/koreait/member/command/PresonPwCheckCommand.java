@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.ui.Model;
 
 import com.koreait.member.dto.Member;
+import com.koreait.member.utill.SecurityUtils;
 
 public class PresonPwCheckCommand{
 

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.koreait.member.command.EmailAuthCommand;
+import com.koreait.member.command.FindIdCommand;
 import com.koreait.member.command.IdCheckCommand;
 import com.koreait.member.command.JoinCommand;
 import com.koreait.member.command.LeaveCommand;
@@ -40,6 +41,7 @@ public class MemberController {
 	private UpdateMemberCommand updateMemberCommand;
 	private PresonPwCheckCommand presonPwCheckCommand;
 	private UpdatePwCommand updatePwCommand;
+	private FindIdCommand findIdCommand;
 	
 	// <bean>으로 생성한 constructor
 	@Autowired
@@ -52,7 +54,8 @@ public class MemberController {
 							LeaveCommand leaveCommand, 
 							UpdateMemberCommand updateMemberCommand,
 							PresonPwCheckCommand presonPwCheckCommand,
-							UpdatePwCommand updatePwCommand) {
+							UpdatePwCommand updatePwCommand,
+							FindIdCommand findIdCommand) {
 		this.sqlSession = sqlSession;
 		this.idCheckCommand = idCheckCommand;
 		this.emailAuthCommand = emailAuthCommand;
@@ -63,6 +66,7 @@ public class MemberController {
 		this.updateMemberCommand = updateMemberCommand;
 		this.presonPwCheckCommand = presonPwCheckCommand;
 		this.updatePwCommand = updatePwCommand;
+		this.findIdCommand = findIdCommand;
 	}
 	
 	
@@ -83,7 +87,7 @@ public class MemberController {
 	}
 	@GetMapping(value="findIdPage.do")
 	public String findIdPage() {
-		return "member/findIdPage";
+		return "member/findId";
 	}
 	// --------------------------------
 	
@@ -175,7 +179,13 @@ public class MemberController {
 	}
 	
 	
-	
+	@PostMapping(value="findId.do")
+	public String findId(HttpServletRequest request, Model model) {
+		model.addAttribute("request", request);
+		findIdCommand.execute(sqlSession, model);
+		return "member/findIdResult"; 
+				// 포워딩되기 때문에 model에 들어있는 아이디 정보를 가지고 이동한다!
+	}
 	
 	
 	
