@@ -26,23 +26,7 @@ public class EmailAuthCommand{
 		HttpServletRequest request = (HttpServletRequest)map.get("request");
 		// 인증번호를 받는 이메일주소
 		String email = request.getParameter("email");
-		
-		// 랜덤으로 6자리의 코드 보내기
-		char[] characters = { 
-				'A','B','C','D','E',
-				'F','G','H','I','J',
-				'K','L','M','N','O',
-				'P','Q','R','S','T',
-				'U','V','W','X','Y',
-				'Z','0','1','2','3',
-				'4','5','6','7','8',
-				'9','!','$','?', '&' 
-		};
 		String authCode = "";
-		for(int i = 0; i < 6; i++) {
-			authCode += characters[(int)(Math.random()*characters.length)];
-		}
-		
 		// MimeMessage 클래스
 		// 이메일을 작성하는 클래스
 		// MimeMessage (javax.mail.internet.MimeMessage)
@@ -52,6 +36,7 @@ public class EmailAuthCommand{
 			message.setFrom(new InternetAddress("kimsuyeon7598@gmail.com", "관리자")); 	// 보내는 사람
 			message.setRecipient(Message.RecipientType.TO, new InternetAddress(email));	// 받는 사람
 			message.setSubject("인증 요청 메일입니다.");
+			authCode = SecurityUtils.getAuthCode(6); // 6자리 인증코드
 			message.setText("인증번호는 " + authCode + "입니다.");
 			
 		} catch (Exception e) {

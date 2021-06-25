@@ -1,5 +1,8 @@
 package com.koreait.member.config;
 
+import javax.mail.internet.PreencodedMimeBodyPart;
+import javax.print.attribute.standard.PresentationDirection;
+
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -10,6 +13,13 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import com.koreait.member.command.EmailAuthCommand;
 import com.koreait.member.command.IdCheckCommand;
+import com.koreait.member.command.JoinCommand;
+import com.koreait.member.command.LeaveCommand;
+import com.koreait.member.command.LoginCommand;
+import com.koreait.member.command.LogoutCommand;
+import com.koreait.member.command.PresonPwCheckCommand;
+import com.koreait.member.command.UpdateMemberCommand;
+import com.koreait.member.command.UpdatePwCommand;
 
 @Configuration
 public class BeanConfiguration {
@@ -54,5 +64,40 @@ public class BeanConfiguration {
 	public EmailAuthCommand emailAuthCommand() {
 		return new EmailAuthCommand();
 	}
+	@Bean
+	public JoinCommand joinCommand() {
+		return new JoinCommand();
+	}
+	@Bean
+	public LoginCommand loginCommand() {
+		return new LoginCommand();
+	}
+	@Bean
+	public LogoutCommand logoutCommand() {
+		return new LogoutCommand();
+	}
+	@Bean
+	public LeaveCommand leaveCommand() {
+		return new LeaveCommand();
+	}
+	@Bean
+	public UpdateMemberCommand updateMemberCommand() {
+		return new UpdateMemberCommand();
+	}
+	@Bean
+	public PresonPwCheckCommand presonPwCheckCommand() {
+		return new PresonPwCheckCommand();
+	}
+	@Bean
+	public UpdatePwCommand updatePwCommand() {
+		return new UpdatePwCommand();
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 }

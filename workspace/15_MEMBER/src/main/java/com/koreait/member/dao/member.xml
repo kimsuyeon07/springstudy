@@ -12,19 +12,46 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		 WHERE ID = #{id}
 	</select>
 	
-	
-	
+	<insert id="join">
+		INSERT INTO MEMBER 
+		VALUES (MEMBER_SEQ.NEXTVAL, #{id}, #{pw}, #{name}, #{email}, SYSDATE)
+	</insert>
 	
 	<select id="selectMemberList" resultType="com.koreait.member.dto.Member">
-		SELECT NO, ID, PW, NAME, REGDATE 
+		SELECT NO, ID, PW, NAME, EMAIL, REGDATE 
 		  FROM MEMBER
 		 ORDER BY NO DESC
 	</select>
 	
-	<select id="selectMemberByNo" resultType="com.koreait.member.dto.Member">
-		SELECT NO, ID, PW, NAME, REGDATE 
+	<select id="login" resultType="com.koreait.member.dto.Member">
+		SELECT NO, ID, PW, NAME, EMAIL, REGDATE 
 		  FROM MEMBER
-		 WHERE NO = #{param1}
+		 WHERE ID = #{id}
+		   AND PW = #{pw}
+	</select>
+	
+	<delete id="leave">
+		DELETE 
+		  FROM MEMBER
+		 WHERE NO = #{no} 
+	</delete>
+	
+	<update id="updateMember">
+		UPDATE MEMBER
+		   SET NAME = #{name}, EMAIL = #{email}
+		 WHERE NO = #{no}
+	</update>
+	
+	<update id="updatePw">
+		UPDATE MEMBER
+		   SET PW = #{pw}
+		 WHERE NO = #{no}
+	</update>
+	
+	<select id="findId" resultType="com.koreait.member.dto.Member">
+		SELECT ID, REGDATE
+		  FROM MEMBER
+		 WHERE EMAIL = #{email}
 	</select>
 	
 </mapper>

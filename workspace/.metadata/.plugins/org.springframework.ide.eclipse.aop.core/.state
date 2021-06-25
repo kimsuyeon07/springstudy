@@ -9,6 +9,7 @@
 <aop-project name="10_CONTACT"/>
 <aop-project name="03_MVC_OVERVIEW"/>
 <aop-project name="13_CONTACT"/>
+<aop-project name="15_MEMBER"/>
 <aop-project name="01_BEAN"/>
 <aop-project name="02_DI"/>
 <aop-project name="04_MVC_BEAN"/>
