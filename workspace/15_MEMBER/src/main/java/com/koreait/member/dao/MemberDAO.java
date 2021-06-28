@@ -11,4 +11,5 @@ public interface MemberDAO {
 	public int updateMember(Member member);
 	public int updatePw(Member member);
 	public Member findId(String email);
+	public int changePw(Member member);
 }

@@ -2,7 +2,7 @@ package com.koreait.member.controller;
 
 import java.util.Map;
 
-import javax.servlet.http.HttpServlet;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -27,6 +28,8 @@ import com.koreait.member.command.UpdateMemberCommand;
 import com.koreait.member.command.UpdatePwCommand;
 import com.koreait.member.dto.Member;
 
+import changePw.ChangePwCommand;
+
 @Controller
 public class MemberController {
 
@@ -42,6 +45,7 @@ public class MemberController {
 	private PresonPwCheckCommand presonPwCheckCommand;
 	private UpdatePwCommand updatePwCommand;
 	private FindIdCommand findIdCommand;
+	private ChangePwCommand changePwCommand;
 	
 	// <bean>으로 생성한 constructor
 	@Autowired
@@ -55,7 +59,8 @@ public class MemberController {
 							UpdateMemberCommand updateMemberCommand,
 							PresonPwCheckCommand presonPwCheckCommand,
 							UpdatePwCommand updatePwCommand,
-							FindIdCommand findIdCommand) {
+							FindIdCommand findIdCommand,
+							ChangePwCommand changePwCommand) {
 		this.sqlSession = sqlSession;
 		this.idCheckCommand = idCheckCommand;
 		this.emailAuthCommand = emailAuthCommand;
@@ -67,6 +72,7 @@ public class MemberController {
 		this.presonPwCheckCommand = presonPwCheckCommand;
 		this.updatePwCommand = updatePwCommand;
 		this.findIdCommand = findIdCommand;
+		this.changePwCommand = changePwCommand;
 	}
 	
 	
@@ -88,6 +94,14 @@ public class MemberController {
 	@GetMapping(value="findIdPage.do")
 	public String findIdPage() {
 		return "member/findId";
+	}
+	@GetMapping(value="findPwPage.do")
+	public String findPwPage() {
+		return "member/findPw";
+	}
+	@GetMapping(value="changePwPage.do")
+	public String changePwPage(@ModelAttribute("email") String email) {
+		return "member/changePw";
 	}
 	// --------------------------------
 	
@@ -187,6 +201,12 @@ public class MemberController {
 				// 포워딩되기 때문에 model에 들어있는 아이디 정보를 가지고 이동한다!
 	}
 	
+	@PostMapping(value="changePw.do")
+	public String changePw(HttpServletRequest request, Model model) {
+		model.addAttribute("request", request);
+		changePwCommand.execute(sqlSession, model);
+		return index();  // redirect:index.do
+	}
 	
 	
 	

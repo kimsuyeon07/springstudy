@@ -1,0 +1,147 @@
+AJAX 활용한 CRUD 작성
+
+1. web.xml 아래 태그를 추가한다. (인코딩)
+	<!-- 인코딩 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+2. pom.xml 최신화를 진행한다.
+
+3. ojdbc6.jar
+	* 아래 2가지 중 한 가지만 사용한다.
+	1) pom.xml 디펜던시 추가하기
+		<repositories>
+			<repository>
+				<id>oracle</id>
+				<name>Oracle JDBC Repository</name>
+				<url>https://maven.jahia.org/maven2</url>
+			</repository>
+		</repositories>
+		<dependencies>
+			<!-- ojdbc6.jar -->
+			<dependency>
+				<groupId>com.oracle</groupId>
+				<artifactId>ojdbc6</artifactId>
+				<version>12.1.0.2</version>
+			</dependency>
+		</dependencies>
+	2) tomcat\lib 디렉터리에 ojdbc6.jar 추가하기
+
+4. mybatis + mybatis-spring + Hikari 디펜던시를 추가한다.
+	<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis</artifactId>
+	    <version>3.4.6</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis-spring</artifactId>
+	    <version>1.3.2</version>
+	</dependency>
+	
+	<!-- HikariCP : 커넥션 풀 -->	
+	<!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
+	<dependency>
+	    <groupId>com.zaxxer</groupId>
+	    <artifactId>HikariCP</artifactId>
+	    <version>3.3.0</version>
+	</dependency>
+
+5. lombok 디펜던시를 추가한다.
+	<!-- lombok : constructor/getter/setter -->
+	<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+	<dependency>
+	    <groupId>org.projectlombok</groupId>
+	    <artifactId>lombok</artifactId>
+	    <version>1.18.4</version>
+	    <scope>provided</scope>
+	</dependency>
+
+6. jackson 디펜던시를 추가한다.
+	<!-- JSON과 Bean 상호변환 -->
+	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	    <version>2.9.4</version>
+	</dependency>
+
+7. lombok 설치한다. (설치 끝나고 sts 재시작)
+  1) lombok.jar 더블 클릭
+     - Specify Location
+     - 사용 중인 STS.exe 선택
+     - Install / Update 클릭
+  2) 1번이 안 되면 명령 프롬프트로 경로 찾아가서 java -jar lombok.jar
+
+8. mapper.xml를 준비한다.
+   com.koreait.ajax.dao 패키지에 배치한다.
+
+9. SqlSession bean을 생성한다.
+
+	1) root-context.xml
+	<!-- HikariConfig -->
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName" value="oracle.jdbc.OracleDriver" />
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
+		<property name="username" value="spring" />
+		<property name="password" value="1111" />
+	</bean>
+	
+	<!-- HikariDataSource -->
+	<bean id="hikariDataSource" class="com.zaxxer.hikari.HikariDataSource">
+		<constructor-arg ref="hikariConfig" />
+	</bean>
+	
+	<!-- SqlSessionFactory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="mapperLocations" value="classpath:com/koreait/ajax/dao/*.xml" />
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- SqlSession -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory" />
+	</bean>
+
+	2) BeanConfiguration.java
+	@Bean
+	public HikariConfig hikariConfig() {
+		HikariConfig hikariConfig = new HikariConfig();
+		hikariConfig.setDriverClassName("oracle.jdbc.OracleDriver");
+		hikariConfig.setJdbcUrl("jdbc:oracle:thin:@127.0.0.1:1521:xe");
+		hikariConfig.setUsername("spring");
+		hikariConfig.setPassword("1111");
+		return hikariConfig;
+	}
+	@Bean
+	public HikariDataSource hikariDataSource() {
+		return new HikariDataSource(hikariConfig());
+	}
+	@Bean
+	public SqlSessionFactory sqlSessionFactory() throws Exception {
+		SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
+		sqlSessionFactory.setDataSource(dataSource());
+		sqlSessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:com/koreait/ajax/dao/*.xml"));
+		return sqlSessionFactory.getObject();
+	}
+	@Bean
+	public SqlSessionTemplate sqlSession() throws Exception {
+		return new SqlSessionTemplate(sqlSessionFactory());
+	}

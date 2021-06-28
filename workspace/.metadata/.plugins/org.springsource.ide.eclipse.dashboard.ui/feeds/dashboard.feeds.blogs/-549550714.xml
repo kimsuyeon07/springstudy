@@ -5,7 +5,37 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-06-25T02:00:00Z</updated>
+  <updated>2021-06-25T18:55:28Z</updated>
+  <entry>
+    <title>Spring Integration Zip 2.0.0 Available</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/06/25/spring-integration-zip-2-0-0-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Artem Bilan</name>
+    </author>
+    <id>tag:spring.io,2021-06-25:4479</id>
+    <updated>2021-06-25T18:55:28Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;Dear Spring community,&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the team and everyone who contributed, it is my pleasure to announce &lt;code&gt;2.0.0&lt;/code&gt; version for Spring Integration Zip extension.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This version is fully based on recently released &lt;a href="https://spring.io/blog/2021/05/19/spring-integration-5-5-goes-ga"&gt;Spring Integration &lt;code&gt;5.5.1&lt;/code&gt;&lt;/a&gt; has upgraded other dependencies and  all the tests have been migrated to JUnit 5. The previously released &lt;a href="https://spring.io/blog/2021/03/01/spring-integration-zip-1-0-4-cve-2021-22114"&gt;released version &lt;code&gt;1.0.4&lt;/code&gt;&lt;/a&gt; of &lt;code&gt;spring-integration-zip&lt;/code&gt; is not compatible with Spring Integration 5th generation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Thank you everyone who contributed!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Cheers,&amp;#160;&lt;br&gt;
+Artem&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-integration-extensions"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration-extensions/issues"&gt;GitHub Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Boot 2.5.2 is now available</title>
     <link rel="alternate" href="https://spring.io/blog/2021/06/24/spring-boot-2-5-2-is-now-available" />
@@ -489,148 +519,6 @@ Or via Binder dependency:&lt;/p&gt;
     <updated>2021-06-03T08:00:00Z</updated>
     <content type="html">&lt;p&gt;Hi, Spring fans! In this installment &lt;a href="https://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to JHipster creator and Microsoft Java Developer Advocacy manager &lt;a href="https://twitter.com/juliendubois"&gt;Julien Dubois (@juliendubois) &lt;/a&gt;&lt;/p&gt;
 &lt;iframe title="JHipster creator and Microsoft Java Developer Advocacy manager Julien Dubois" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=h8twk-105514a-pb&amp;from=pb6admin&amp;download=1&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=1&amp;btn-skin=7"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>"Wiremock" for RSocket</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/06/02/wiremock-for-rsocket" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Dave Syer</name>
-    </author>
-    <id>tag:spring.io,2021-06-03:4459</id>
-    <updated>2021-06-02T19:52:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;If you have an application that connects to an &lt;a href="https://rsocket.io"&gt;RSocket&lt;/a&gt; server at runtime, how do you test it? We need a way for a test to start a server and tell us where it is listening, and then we need to be able to register request and response examples (a.k.a. "contracts"). That&amp;#8217;s what this &lt;a href="https://github.com/dsyer/rsocket-test-server"&gt;project&lt;/a&gt; provides - it&amp;#8217;s like Wiremock but for RSocket.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="getting-started"&gt;&lt;a class="anchor" href="#getting-started"&gt;&lt;/a&gt;Getting Started&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The easiest way to use the project is as a JUnit (Jupiter) extension, e.g:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="java"&gt;@SpringBootTest
-@ExtendWith(RSocketServerExtension.class)
-class SocketsApplicationTests {
-	...
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;With this extension installed the Spring Boot tests will run with an RSocket server listening on a port given by &lt;code&gt;test.rsocket.server.port&lt;/code&gt;, so the test can connect directly to it, or (more likely) the code that it is testing will connect to it. You might need to tell it where to connect via the &lt;code&gt;@SpringBootTest&lt;/code&gt; annotation, e.g. if the application is looking for a property at runtime called &lt;code&gt;rsocket.port&lt;/code&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="java"&gt;@SpringBootTest("rsocket.port=${test.rsocket.server.port}")
-@ExtendWith(RSocketServerExtension.class)
-class SocketsApplicationTests {
-	...
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="defining-message-mappings-in-json"&gt;&lt;a class="anchor" href="#defining-message-mappings-in-json"&gt;&lt;/a&gt;Defining message mappings in JSON&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Test methods can inject an &lt;code&gt;RSocketMessageCatalog&lt;/code&gt; or &lt;code&gt;RSocketMessageRegistry&lt;/code&gt; and then use those to set up or inspect the state of the server. By default the server reads JSON contracts from the classpath at &lt;code&gt;/catalog/*.json&lt;/code&gt;, so you can set those up locally or in a test library that you share with the sarver. The structure of the JSON mirrors the &lt;code&gt;MessageMapping&lt;/code&gt; that is stored in the &lt;code&gt;RSocketMessageCatalog&lt;/code&gt;. Here&amp;#8217;s an example (the request and response are just JSON objects):&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="json"&gt;{
-	"pattern": "events.response.*",
-	"frameType": "REQUEST_RESPONSE",
-	"request": {
-		"origin": "Client"
-	},
-	"response": {
-		"origin": "Server",
-		"interaction": "Response",
-		"index": 0
-	}
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This mapping will match any &lt;code&gt;REQUEST_RESPONSE&lt;/code&gt; frame type on a route that matches the pattern, and which also has a request with a field "origin" equal to "Client". You can also match on a pattern in a field in the request by adding wildcards. Or you can leave the request out to match only on the route. If the frame type is &lt;code&gt;REQUEST_RESPONSE&lt;/code&gt; then the response is single valued. If the frametype is &lt;code&gt;REQUEST_STREAM&lt;/code&gt; you can provide a multi-valued "responses", for example:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="json"&gt;{
-	"pattern": "my.stream.route",
-	"frameType": "REQUEST_STREAM",
-	"responses": [
-		{
-			"origin": "Server",
-			"interaction": "Stream",
-			"index": 0
-		},
-		{
-			"origin": "Server",
-			"interaction": "Stream",
-			"index": 1
-		},
-		{
-			"origin": "Server",
-			"interaction": "Stream",
-			"index": 2
-		}
-	]
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In addition you can specify an integer field "repeat" to repeat the responses to form a longer stream. If the frame type is &lt;code&gt;REQUEST_FNF&lt;/code&gt; then there is no response, and the request will be ignored. And finally, if the frame type is &lt;code&gt;REQUEST_CHANNEL&lt;/code&gt; then the format of the mapping JSON is the same as the &lt;code&gt;REQUEST_STREAM&lt;/code&gt;, except that every time a message comes in from the input stream, the output stream is emitted again.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="manipulating-and-inspecting-the-message-catalog"&gt;&lt;a class="anchor" href="#manipulating-and-inspecting-the-message-catalog"&gt;&lt;/a&gt;Manipulating and inspecting the message catalog&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;If you need more flexibility with the processing rules you can create your own &lt;code&gt;MessageMapping&lt;/code&gt; from the convenient static factory methods in the interface. You can supply a handler function (except for the fire and forget case), a pattern to match, and optionally a request to match. These methods can be used to dynamically register mappings to define the expected behaviour of the server at runtime.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can inspect the state of the server by acquiring a &lt;code&gt;MessageMapping&lt;/code&gt; from the catalog, and then calling one of the &lt;code&gt;drain()&lt;/code&gt; methods to drain off the requests that have been received. For example:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="java"&gt;@SpringBootTest
-@ExtendWith(RSocketServerExtension.class)
-class DynamicRouteTests {
-
-	private RSocketRequester rsocketRequester;
-
-	public DynamicRouteTests(@Autowired RSocketRequester.Builder rsocketRequesterBuilder,
-			@Value("${test.rsocket.server.port:7000}") int port) {
-		rsocketRequester = rsocketRequesterBuilder.tcp("localhost", port);
-	}
-
-	@Test
-	void response(RSocketMessageRegistry catalog) {
-		MessageMapping response = MessageMapping.response("response")
-				.response(new Foo("Server", "Response"));
-		catalog.register(response);
-		assertThat(rsocketRequester.route("response").data(new Foo("Client", "Request"))
-				.retrieveMono(Foo.class).doOnNext(foo -&amp;gt; {
-					System.err.println(foo);
-					assertThat(foo.getOrigin()).isEqualTo("Server");
-				}).block()).isNotNull();
-		assertThat(response.drain()).hasSize(1);
-		assertThat(response.drain()).hasSize(0);
-	}
-
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The code here is still really a prototype, but it&amp;#8217;s already potentially quite useful. So try it out and send feedback and maybe we can mature it to the point where we can release it.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

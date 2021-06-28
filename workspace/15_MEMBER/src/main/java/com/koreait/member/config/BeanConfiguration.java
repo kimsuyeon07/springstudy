@@ -22,6 +22,8 @@ import com.koreait.member.command.PresonPwCheckCommand;
 import com.koreait.member.command.UpdateMemberCommand;
 import com.koreait.member.command.UpdatePwCommand;
 
+import changePw.ChangePwCommand;
+
 @Configuration
 public class BeanConfiguration {
 
@@ -98,6 +100,10 @@ public class BeanConfiguration {
 		return new FindIdCommand();
 	}
 	
+	@Bean
+	public ChangePwCommand changePwCommand() {
+		return new ChangePwCommand();
+	}
 	
 	
 	

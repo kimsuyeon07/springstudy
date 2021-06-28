@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.koreait.ajax.dao.MemberDAO">
+	
+	<insert id="insertMember">
+		INSERT INTO MEMBER
+		VALUES (MEMBER_SEQ.NEXTVAL, #{id}, #{name}, #{address}, #{gender})
+	</insert>
+	
+	<!-- 전체 회원 수 -->
+	<select id="getTotalMemberCount" resultType="int">
+		SELECT COUNT(NO)
+		  FROM MEMBER
+	</select>
+	
+	<!-- paging에 의한 회원 목록 반환 (beginRecord, endRecord)  -->
+	<select id="selectMemberList" resultType="com.koreait.ajax.dto.Member">
+		SELECT B.RN, B.NO, B.ID, B.NAME, B.ADDRESS, B.GENDER
+		  FROM (SELECT ROWNUM AS RN, A.NO, A.ID, A.NAME, A.ADDRESS, A.GENDER
+		  		  FROM (SELECT NO, ID, NAME, ADDRESS, GENDER
+		  		  		  FROM MEMBER
+		  		  		 ORDER BY NO DESC) A) B
+		 WHERE B.RN BETWEEN #{beginRecord} AND #{endRecord} 
+	</select>
+	
+</mapper>
