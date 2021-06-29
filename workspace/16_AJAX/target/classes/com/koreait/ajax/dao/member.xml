@@ -26,4 +26,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		 WHERE B.RN BETWEEN #{beginRecord} AND #{endRecord} 
 	</select>
 	
+	<!-- 회원 조회 -->
+	<select id="selectMemberByNo" resultType="com.koreait.ajax.dto.Member">
+		SELECT NO, ID, NAME, ADDRESS, GENDER
+		  FROM MEMBER
+		 WHERE NO = #{no}
+	</select>
+	
 </mapper>

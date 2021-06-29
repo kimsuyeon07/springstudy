@@ -1,13 +1,13 @@
 package com.koreait.ajax.command;
 
 import java.io.IOException;
-import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.ui.Model;
 
 import com.koreait.ajax.dao.MemberDAO;
@@ -33,9 +33,10 @@ public class InsertMemberCommand implements MemberCommand {
 		resultMap = new HashMap<String, Object>();
 		resultMap.put("result", result);
 		
-		} catch (SQLIntegrityConstraintViolationException e) { 
+		} catch (DuplicateKeyException e) { 
 			// 키 위반 (아이디 중복으로 인한 위반)
 			try {
+				response.setContentType("text/html; charset=UTF-8"); // ※
 				response.setStatus(1001);
 				response.getWriter().println("사용 중인 아이디입니다!");
 				// ↑ "response.getWriter()"는 [try문]이 "필수"이다!!

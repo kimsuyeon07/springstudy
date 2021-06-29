@@ -5,7 +5,24 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-06-25T18:55:28Z</updated>
+  <updated>2021-06-28T10:00:00Z</updated>
+  <entry>
+    <title>CVE report published for Spring Security</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/06/28/cve-report-published-for-spring-security" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Joe Grandja</name>
+    </author>
+    <id>tag:spring.io,2021-06-28:4481</id>
+    <updated>2021-06-28T10:00:00Z</updated>
+    <content type="html">&lt;p&gt;We have &lt;a href="https://spring.io/blog/2021/06/22/spring-security-5-5-1-5-4-7-5-3-10-and-5-2-11-released"&gt;released&lt;/a&gt; Spring Security 5.5.1, 5.4.7, 5.3.10 and 5.2.11 to address the following CVE report:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://tanzu.vmware.com/security/cve-2021-22119"&gt;CVE-2021-22119: Denial-of-Service attack with spring-security-oauth2-client&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please review the information in the CVE report and upgrade immediately.&lt;/p&gt;
+&lt;p&gt;Spring Boot users should upgrade to &lt;a href="https://spring.io/blog/2021/06/24/spring-boot-2-5-2-is-now-available"&gt;2.5.2&lt;/a&gt; or &lt;a href="https://spring.io/blog/2021/06/24/spring-boot-2-4-8-is-now-available"&gt;2.4.8&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Integration Zip 2.0.0 Available</title>
     <link rel="alternate" href="https://spring.io/blog/2021/06/25/spring-integration-zip-2-0-0-available" />
@@ -506,19 +523,6 @@ Or via Binder dependency:&lt;/p&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis/blob/master/spring-cloud-stream-binder-kinesis-docs/src/main/asciidoc/contributing.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-cloud-stream"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-cloud-stream"&gt;Chat&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: JHipster creator and Microsoft Java Developer Advocacy manager Julien Dubois</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/06/03/a-bootiful-podcast-jhipster-creator-and-microsoft-java-developer-advocacy-manager-julien-dubois" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2021-06-03:4460</id>
-    <updated>2021-06-03T08:00:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment &lt;a href="https://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to JHipster creator and Microsoft Java Developer Advocacy manager &lt;a href="https://twitter.com/juliendubois"&gt;Julien Dubois (@juliendubois) &lt;/a&gt;&lt;/p&gt;
-&lt;iframe title="JHipster creator and Microsoft Java Developer Advocacy manager Julien Dubois" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=h8twk-105514a-pb&amp;from=pb6admin&amp;download=1&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=1&amp;btn-skin=7"&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

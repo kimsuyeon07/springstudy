@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 
 import com.koreait.ajax.dao.MemberDAO;
 import com.koreait.ajax.dto.Member;
+import com.koreait.ajax.dto.Page;
+import com.koreait.ajax.utill.PagingUtils;
 
 public class SelectMemberListCommand implements MemberCommand {
 
@@ -16,30 +18,23 @@ public class SelectMemberListCommand implements MemberCommand {
 	public Map<String, Object> execute(SqlSession sqlSession, Model model) {
 
 		Map<String , Object> map = model.asMap();
-		int page = (int)map.get("page");
 		
 		MemberDAO memberDAO = sqlSession.getMapper(MemberDAO.class);
+		
+		// 현재 페이지 번호
+		int page = (int)map.get("page");
 		// 전체 회원 수
 		int totalRecord = memberDAO.getTotalMemberCount();
-		// 현재 페이지에서 보여주고자 하는 회원 정보 수
-		int recordPerPage = 5;
-		int beginRecord = (page - 1) * recordPerPage + 1;
-		int endRecord = beginRecord + recordPerPage - 1;
-		endRecord = endRecord > totalRecord ? totalRecord : endRecord ;
-		
-		Map<String, Integer> pagingMap = new HashMap<String, Integer>();
-		pagingMap.put("beginRecord", beginRecord);
-		pagingMap.put("endRecord", endRecord);
-		
+		// 페이징 처리에 필요한 모든 변수를 저장한 클래스
+		Page paging = PagingUtils.getPage(page, totalRecord);
 		// 현재 페이지에 보여줄 회원 목록 
-		List<Member> list = memberDAO.selectMemberList(pagingMap);
-		System.out.println("회원 수 : " + list.size());
-		System.out.println(list.toString());
+		List<Member> list = memberDAO.selectMemberList(paging);
 		
 		/* Controller에 전달 할 Map 생성 */
 		Map<String, Object> resultMap = new HashMap<>();
 		resultMap.put("list", list);
 		resultMap.put("exists", list.size() > 0);
+		resultMap.put("paging", paging);
 		
 		/* -------------- */
 		return resultMap;

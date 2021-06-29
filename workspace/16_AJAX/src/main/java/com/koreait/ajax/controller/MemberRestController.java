@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.koreait.ajax.command.InsertMemberCommand;
 import com.koreait.ajax.command.SelectMemberListCommand;
+import com.koreait.ajax.command.SelectMemberViewCommand;
 import com.koreait.ajax.dto.Member;
 import com.koreait.ajax.dto.Page;
 
@@ -28,15 +29,18 @@ public class MemberRestController {
 	private SqlSession sqlSession;
 	private InsertMemberCommand insertMemberCommand;
 	private SelectMemberListCommand selectMemberListCommand;
+	private SelectMemberViewCommand selectMemberViewCommand;
 	
 	// constructor : Bean으로 생성한 sqlSession, Command를 불러온다.
 	@Autowired
 	public MemberRestController(SqlSession sqlSession,
 								InsertMemberCommand insertMemberCommand,
-								SelectMemberListCommand selectMemberListCommand) {
+								SelectMemberListCommand selectMemberListCommand,
+								SelectMemberViewCommand selectMemberViewCommand) {
 		this.sqlSession = sqlSession;
 		this.insertMemberCommand = insertMemberCommand;
 		this.selectMemberListCommand = selectMemberListCommand;
+		this.selectMemberViewCommand = selectMemberViewCommand;
 	}
 	
 	// JSON으로 넘겨준다.
@@ -61,6 +65,17 @@ public class MemberRestController {
 		return selectMemberListCommand.execute(sqlSession, model);
 	}
 	
+	/* 회원 조회 */
+	@PostMapping(value="selectMemberView.do", 
+				 produces="application/json; charset=UTF-8")
+	public Map<String, Object> selectMemberView(@RequestBody Member member, 
+												Model model) {
+		System.out.println(member.getNo());
+		model.addAttribute("no", member.getNo());
+		return selectMemberViewCommand.execute(sqlSession, model);
+		// resultMap = { member : { no : member.getNo(), id : member.getId(), ... },
+		//				 exists : true OR false }
+	}
 	
 	
 	
