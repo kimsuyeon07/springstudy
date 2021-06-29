@@ -23,5 +23,11 @@ public interface MemberDAO {
 	/* 회원 조회 */
 	public Member selectMemberByNo(long no);
 	
+	/* 회원 수정 */
+	public int updateMember(Member member);
+	
+	/* 회원 삭제 */
+	public int deleteMember(long no);
+	
 	
 }

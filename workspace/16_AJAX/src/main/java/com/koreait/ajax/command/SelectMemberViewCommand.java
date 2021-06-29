@@ -24,7 +24,7 @@ public class SelectMemberViewCommand implements MemberCommand {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("member", member);
 		resultMap.put("exists", member != null);
-		System.out.println(resultMap);
+		// System.out.println(resultMap);
 		
 		/* ------------- */
 		return resultMap;

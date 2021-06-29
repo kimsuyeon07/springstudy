@@ -15,6 +15,7 @@
 			fn_insertMember();
 			fn_updateMember();
 			fn_deleteMember();
+			fn_init();
 		}); // 페이지 로드 이벤트 (종료)
 		
 		
@@ -148,7 +149,6 @@
 					 // no : $(this).parent().siblings('#no').val()
 					 // .siblings('#no') >> 같은 부모의 형제들 중에서 id="no"을 찾아준다.	
 				}; 
-				console.log(obj);
 				$.ajax({
 					url: 'selectMemberView.do',
 					type: 'post',
@@ -163,7 +163,8 @@
 							$('input:text[name="gender"]').attr('checked');
 							$('input:radio[name="gender"][value="'+ resultMap.member.gender +'"]').prop('checked', true);
 							$('#view_area input:hidden[name="no"]').val(resultMap.member.no);
-							
+							// 조회버튼을 눌렀을 때, id박스를 수정할 수 없도록 한다.
+							$('#id').attr('readonly', true);
 						} else { // member가 존재하지 않으면 실행
 							alert(obj.no + '번 회원 정보가 없습니다.');
 						}
@@ -222,14 +223,93 @@
 		
 		// 5. 회원 수정
 		function fn_updateMember() {
-			
+			$('#update_btn').click(function(){
+				var obj = {
+					no : $('#view_area input:hidden[name="no"]').val(),
+					id : $('#id').val(),
+					name : $('#name').val(),
+					address : $('#address').val(),
+					gender : $('input:radio[name="gender"]:checked').val()
+				};
+				console.log(obj);
+				
+				// 조건문
+				/* if ($('#id').val() != obj.id) {
+					alert('아이디는 수정할 수 없습니다.');
+					return false;
+				} else if ($('#name').val() == obj.name && $('#address').val() == obj.address && $('input:radio[name="gender"]:checked').val() == obj.gender ) {
+					alert('수정할 내용이 없습니다.');
+					return false;
+				} */
+				
+				$.ajax({
+					url: 'updateMember.do',
+					type: 'post',
+					contentType: 'application/json',
+					data: JSON.stringify(obj),
+					dataType: 'json',
+					success: function(resultMap) {
+						if (resultMap.count > 0) {
+							alert('회원 정보가 수정되었습니다.');
+							fn_selectMemberList();
+						} else {
+							alert('회원 정보 수정에 실패앴습니다.');
+						}
+					}, 
+					error: function(xhr, textStatus, errorThrown) {
+						
+					}
+				}); //$.ajax (END)
+			}); //$('#update_btn').click (END)
 		} /* [END]fn_updateMember() */
 		
 		
 		// 6. 회원 삭제
 		function fn_deleteMember() {
-			
+			$('#delete_btn').click(function(){
+				if (!confirm('삭제할까요?')) {
+					return false;
+				} //-----------------------------------  ↓
+				var obj = {
+					no : $('input:hidden[name="no"]').val()	
+				};
+				$.ajax({
+					url: 'deleteMember.do',
+					type: 'post',
+					contentType: 'application/json',
+					data: JSON.stringify(obj),
+					dataType: 'json',
+					success: function(resultMap) {
+						if (resultMap.count > 0) {
+							alert('회원 정보가 삭제되었습니다.');
+							// 입력창 초기화
+							$('#id').val('').attr('readonly', false);
+							$('#name').val('');
+							$('#address').val('');
+							$('input:radio[name="gender"]').prop('checked', false);
+							// 회원 목록 다시 불러오기
+							fn_selectMemberList();
+						} else {
+							alert('회원 정보 삭제가 실패했습니다.');
+						}
+					},
+					error: function(xhr, textStatus, errorThrown) {
+						
+					}
+				}); //$.ajax (END)
+			}); //$('#delete_btn').click (END)
 		} /* [END]fn_deleteMember() */
+		
+		// 7. 초기화
+		function fn_init() {
+			$('#init_btn').click(function(){
+				$('#id').val('').attr('readonly', false);
+				$('#name').val('');
+				$('#address').val('');
+				$('input:radio[name="gender"]').prop('checked', false);
+			});
+		}
+		
 		
 	</script>
 	
@@ -263,8 +343,13 @@
 		<input type="radio" name="gender" value="남" id="male"> <label for="male">남성</label>
 		<input type="radio" name="gender" value="여" id="female"> <label for="female">여성</label>
 		<br>
-		<input type="hidden" name="no" id="no">								<br>
-		<input type="button" value="등록" id="insert_btn">					<br>
+		<input type="hidden" name="no" id="no">
+		
+		<!-- == <input type="button" value="초기화" id="init_btn" onclick="location.href='manageMember.do'"> -->
+		<input type="button" value="초기화" id="init_btn">
+		<input type="button" value="등록" id="insert_btn">	 
+		<input type="button" value="수정" id="update_btn">	 
+		<input type="button" value="삭제" id="delete_btn">		 
 		<div id="btn"></div>
 	</div>
 	<br><br>

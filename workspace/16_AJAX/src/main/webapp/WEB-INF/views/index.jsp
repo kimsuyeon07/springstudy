@@ -23,11 +23,14 @@
 			background-color:#f9f9f9;
 			cursor:pointer;
 		}
+		#rest {margin-top:20px;}
 	</style>
 </head>
 <body>
 
 	<a href="manageMember.do">회원관리로 이동</a>
+	<br><br>
+	<a href="manageMemberRest.do" id="rest">회원관리(Rest)로 이동</a>
 
 </body>
 </html>
