@@ -5,7 +5,44 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-06-28T10:00:00Z</updated>
+  <updated>2021-06-30T07:00:00Z</updated>
+  <entry>
+    <title>Spring Tips: Spring Retrosocket</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/06/30/spring-tips-spring-retrosocket" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2021-06-26:4480</id>
+    <updated>2021-06-30T07:00:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment, Josh Long looks at &lt;a href="http://github.com/spring-projects-experimental/spring-retrosocket/"&gt;Spring Retrosocket&lt;/a&gt;, an &lt;em&gt;EXPERIMENTAL&lt;/em&gt; project designed to provide an OpenFeign- or Retrofit-like experience for RSocket clients. &lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/vHOztWJNnBs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - June 29th, 2021</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/06/29/this-week-in-spring-june-29th-2021" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2021-06-30:4482</id>
+    <updated>2021-06-29T08:00:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! How&amp;rsquo;re you doin&amp;rsquo;? I&amp;rsquo;ve been busy working on new Spring Tips videos! (You are subscribed &lt;a href="https://spring.io/video"&gt;to our YouTube channel&lt;/a&gt;, aren&amp;rsquo;t you?) I&amp;rsquo;ll be doing Tanzu Code tomorrow, so don&amp;rsquo;t miss that. We&amp;rsquo;re going to be hacking on Spring Native, Spring Cloud Square, Spring Integration, and so much more. &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Hi, Spring fans! In last week&amp;rsquo;s installment of &lt;a href="https://spring.io/blog/2021/06/23/spring-tips-kubernetes-native-java"&gt;&lt;em&gt;Spring Tips&lt;/em&gt;, I look at &lt;em&gt;Kubernetes Native Java&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/24/a-bootiful-podcast-webassembly-iot-data-science-and-java-guru-brian-sletten"&gt;A Bootiful Podcast: webassembly, IoT, data science, and Java guru Brian Sletten&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://kubernetes.io/blog/2021/06/28/announcing-kubernetes-community-group-annual-reports/"&gt;Blog: Announcing Kubernetes Community Group Annual Reports&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/28/cve-report-published-for-spring-security"&gt;CVE report published for Spring Security&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I was on the Software-Defined Talk podcast with Michael Cot? last week. Check it out: &lt;a href="https://www.softwaredefinedtalk.com/308"&gt;Developer Relations with Josh Long&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/graalvm/status/1409910276015726594?s=12"&gt;A new version of GraalVM Native Image build tools is available!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/24/spring-boot-2-4-8-is-now-available"&gt;Spring Boot 2.4.8 is now available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/24/spring-boot-2-5-2-is-now-available"&gt;Spring Boot 2.5.2 is now available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/25/spring-integration-zip-2-0-0-available"&gt;Spring Integration Zip 2.0.0 Available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/JavaAtMicrosoft/status/1409930916386979845"&gt;Meet the team that worked with many customers to build the Azure Spring Cloud reference architecture. Deploy Spring Boot apps with confidence using enterprise best practices &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>CVE report published for Spring Security</title>
     <link rel="alternate" href="https://spring.io/blog/2021/06/28/cve-report-published-for-spring-security" />
@@ -444,85 +481,6 @@ public class GreetingService {
 &lt;p&gt;Spring Framework &lt;code&gt;5.3.8&lt;/code&gt; includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.3.8"&gt;35 fixes and improvements&lt;/a&gt;. &lt;/p&gt;
 &lt;p&gt;Stay tuned for follow-up Spring Boot releases later this week.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.3.8/reference/html/"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - June 8th, 2021</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/06/08/this-week-in-spring-june-8th-2021" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2021-06-08:4462</id>
-    <updated>2021-06-09T06:46:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! What&amp;rsquo;s shaking? It&amp;rsquo;s one of those weeks where, even though the thing I wanted to happen - a vacation with the family - didn&amp;rsquo;t happen, what did happen - accidentally lots of free time with no meetings - has turned out wonderfully. It was all I could do to pry myself from the IDE to pull together this week&amp;rsquo;s roundup, but I am glad I did! There&amp;rsquo;s a ton of great stuff there. Let&amp;rsquo;s dive into it.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;I love this post by the good Dr. David Syer: &lt;a href="https://spring.io/blog/2021/06/02/wiremock-for-rsocket"&gt;&amp;ldquo;Wiremock&amp;rdquo; for RSocket&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;In this week&amp;rsquo;s installment of &lt;a href="https://spring.io/blog/2021/06/03/a-bootiful-podcast-jhipster-creator-and-microsoft-java-developer-advocacy-manager-julien-dubois"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt;, JHipster creator and Microsoft Java Developer Advocacy manager Julien Dubois&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=EbU15SvXlGk"&gt;Kotlin 1.5.0 Release Community Event&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This is super interesting: &lt;a href="https://www.youtube.com/watch?v=VYB8YM-Dh8k&amp;feature=youtu.be"&gt;OpenJDK on RISC-V - an update from Alibaba&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;To all the readers of my little book so far: Thank you! &lt;a href="https://twitter.com/philip_schikora/status/1402169751040823297"&gt;Schiko on Twitter: &amp;ldquo;Reactive Spring&amp;rdquo; by @starbuxman is without a doubt the best programming book i&amp;rsquo;ve ever read. Thanks Josh! https://t.co/nAzdK4kNyn #springboot #Java&amp;quot; / Twitter&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/06/04/spring-integration-aws-2-5-1-and-spring-cloud-stream-kinesis-binder-2-2-0-available"&gt;Spring Integration AWS 2.5.1 and Spring Cloud Stream Kinesis Binder 2.2.0 Available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=ueDJIJ93qGo"&gt;The presentation that Brian Sam Bodden and I did for RedisConf - &amp;ldquo;An application framework worthy of Redis&amp;rdquo; - is now available on YouTube! Check it out!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blogs.vmware.com/vmworld/2021/06/whats-new-with-content-at-vmworld-2021.html"&gt;What¡¯s new with content at VMworld 2021?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/agschnitzer/multitenant"&gt;agschnitzer/multitenant: Multi-Tenant Spring Boot Application using Hibernate and H2&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/JavaAtMicrosoft/status/1400135120410054657"&gt;Got 30 minutes? Learn how to propel Java applications into the future with @AzureCosmosDB, a fast NoSQL database with open APIs for any scale! Start learning &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Integration AWS 2.5.1 and Spring Cloud Stream Kinesis Binder 2.2.0 Available</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/06/04/spring-integration-aws-2-5-1-and-spring-cloud-stream-kinesis-binder-2-2-0-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Artem Bilan</name>
-    </author>
-    <id>tag:spring.io,2021-06-04:4461</id>
-    <updated>2021-06-04T17:51:28Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;Dear Spring Community,&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Today it&amp;#8217;s my pleasure to announce releases of Spring Integration for Amazon Web Services extension versions &lt;code&gt;2.5.1&lt;/code&gt; and Spring Cloud Stream Binder for AWS Kinesis &lt;code&gt;2.2.0&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;These releases can be downloaded from Maven Central:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="groovy"&gt;compile 'org.springframework.integration:spring-integration-aws:2.5.1'&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;If you don&amp;#8217;t use Kinesis Binder.
-Or via Binder dependency:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="groovy"&gt;compile 'org.springframework.cloud:spring-cloud-stream-binder-kinesis:2.2.0'&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Integration for AWS extension of &lt;code&gt;2.5.1&lt;/code&gt; has some minor bug fixes after the previous &lt;code&gt;2.5.0&lt;/code&gt; &lt;a href="https://spring.io/blog/2021/05/20/spring-integration-for-aws-2-5-goes-ga"&gt;announcement&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The Spring Cloud Stream Binder for AWS Kinesis &lt;code&gt;2.2.0&lt;/code&gt; is the first release in the project generation which is based on a new independent &lt;a href="https://awspring.io/"&gt;Spring Cloud for AWS artifact&lt;/a&gt;. It also was upgraded to the latest &lt;a href="https://spring.io/blog/2021/05/28/spring-cloud-2020-0-3-aka-ilford-is-available"&gt;Spring Cloud &lt;code&gt;2020.0.3&lt;/code&gt;&lt;/a&gt; and has some other bug fixes and improvements.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Any feedback is welcome via all the available communication channels!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Integration for AWS resources:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-integration-aws"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Cloud Stream Binder for AWS Kinesis resources:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis/blob/master/spring-cloud-stream-binder-kinesis-docs/src/main/asciidoc/contributing.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-cloud-stream"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-cloud-stream"&gt;Chat&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

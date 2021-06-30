@@ -5,6 +5,59 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.koreait.search.dao.SearchDAO">
 	
+	<!-- 전체 사원 수 -->
+	<select id="getTotalRecord" resultType="int">
+		SELECT COUNT(EMPLOYEE_ID)
+		  FROM EMPLOYEES
+	</select>
+	
+	<!-- 검색결과 : 사원 수 -->
+	<select id="getSearchRecord" resultType="int">
+		SELECT COUNT(EMPLOYEE_ID)
+		  FROM EMPLOYEES
+		 WHERE ${column} LIKE '%' || #{query} || '%'
+	</select>
+	
+	
+	<!-- 목록 전체 반환 -->
+	<select id="searchAll" resultType="com.koreait.search.dto.Employees">
+		SELECT B.*
+		  FROM (SELECT ROWNUM AS RN, A.*
+		  		  FROM (SELECT EMPLOYEE_ID AS EMPLOYEEID, FIRST_NAME AS FIRSTNAME, LAST_NAME AS LASTNAME, HIRE_DATE AS HIREDATE, SALARY AS SALARY, DEPARTMENT_ID AS DEPARTMENTID
+		  		  		  FROM EMPLOYEES
+		  		  		 ORDER BY EMPLOYEE_ID) A) B
+		 WHERE B.RN BETWEEN #{beginRecord} AND #{endRecord}
+	</select>
+	
+	<!-- 검색 시, 자동완성 -->
+	<!-- 칼럼의 정보를 사용할 때는 "${}"로 사용해야한다. -->
+	<!-- SELECT REPLACE(${column), '_', '') FROM DUAL : column에 붙어있는 "_"를 찾아서 ("")없애 주세요 -->
+	<!-- ↓ 칼럼의 이름만 수정해주는 목적 (FROM/WHERE절과는 별개이다) -->
+	<!-- DISTINCT : 중복 제거 -->
+	<select id="autoComplete" resultType="com.koreait.search.dto.Employees">
+		SELECT DISTINCT
+			   <if test="column == 'EMPLOYEE_ID'">EMPLOYEE_ID AS EMPLOYEEID</if>
+			   <if test="column == 'FIRST_NAME'">FIRST_NAME AS FIRSTNAME</if>
+			   <if test="column == 'LAST_NAME'">LAST_NAME AS LASTNAME</if>
+		  FROM EMPLOYEES
+		 WHERE ${column} LIKE #{query} || '%'
+	</select>
+	
+	<!-- 검색결과 반환 -->
+	<select id="search" resultType="com.koreait.search.dto.Employees">
+		SELECT B.*
+		  FROM (SELECT ROWNUM AS RN, A.*
+		  		  FROM (SELECT EMPLOYEE_ID AS EMPLOYEEID, FIRST_NAME AS FIRSTNAME, LAST_NAME AS LASTNAME, HIRE_DATE AS HIREDATE, SALARY AS SALARY, DEPARTMENT_ID AS DEPARTMENTID
+		  		  		  FROM EMPLOYEES
+		  		  		 WHERE <if test="column != 'SALARY'">${column} LIKE '%' || #{query} || '%'</if>
+		  		  		 	   <if test="column == 'SALARY'">SALARY BETWEEN #{bottom} AND #{top}</if>
+		  		  		 ORDER BY EMPLOYEE_ID) A) B
+		 WHERE B.RN BETWEEN #{beginRecord} AND #{endRecord}
+	</select>
+	
+	
+	
+	
 	
 	
 </mapper>
