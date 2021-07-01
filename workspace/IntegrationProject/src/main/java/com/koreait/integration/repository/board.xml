@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- board.xml (자기자신을 받아온다) _ DAO와 연결하지 않음.  -->
+<mapper namespace="com.koreait.integration.repository.board">
+	
+	<select id="selectAll" resultType="com.koreait.integration.domain.Board">
+		SELECT NO, WRITER, TITLE, CONTENT, POSTDATE
+		  FROM BOARD
+		 ORDER BY NO DESC
+	</select>
+	
+	<select id="selectQuery" resultType="com.koreait.integration.domain.Board">
+		SELECT NO, WRITER, TITLE, CONTENT, POSTDATE
+		  FROM BOARD
+		<if test="column != 'BOTH'"> WHERE ${column} LIKE '%' || #{query} || '%' </if>
+		<if test="column == 'BOTH'"> WHERE TITLE LIKE '%' || #{query} || '%' OR CONTENT LIKE '%' || #{query} || '%' </if>
+		 ORDER BY NO DESC
+	</select>
+	
+	
+	
+</mapper>
