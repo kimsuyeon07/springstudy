@@ -16,5 +16,7 @@
 <aop-project name="02_DI"/>
 <aop-project name="04_MVC_BEAN"/>
 <aop-project name="12_BOARD"/>
+<aop-project name="IntegrationProject"/>
+<aop-project name="StudyProject"/>
 <aop-project name="09_BOARD"/>
 </aop-reference-model>

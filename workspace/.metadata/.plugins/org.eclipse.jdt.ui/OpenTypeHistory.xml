@@ -12,4 +12,6 @@
 <typeInfo handle="=15_MEMBER/src\/main\/java&lt;com.koreait.member.command{MemberCommand.java[MemberCommand" modifiers="513" timestamp="1624504704375"/>
 <typeInfo handle="=16_AJAX/src\/main\/java&lt;com.koreait.ajax.command{MemberCommand.java[MemberCommand" modifiers="513" timestamp="1624851151226"/>
 <typeInfo handle="=17_SEARCH/src\/main\/java&lt;com.koreait.search.command{SearchCommand.java[SearchCommand" modifiers="513" timestamp="1624954693014"/>
+<typeInfo handle="=IntegrationProject/src\/main\/java&lt;com.koreait.integration.service{BoardService.java[BoardService" modifiers="513" timestamp="1625105568986"/>
+<typeInfo handle="=IntegrationProject/C:\/Users\/ITSC\/.m2\/repository\/org\/quartz-scheduler\/quartz\/2.3.0\/quartz-2.3.0.jar&lt;org.quartz(Job.class[Job" modifiers="1537" timestamp="1625098638235"/>
 </typeInfoHistroy>
