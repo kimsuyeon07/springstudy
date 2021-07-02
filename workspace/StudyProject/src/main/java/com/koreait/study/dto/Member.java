@@ -86,6 +86,14 @@ public class Member {
 		this.state = state;
 	}
 	
+	// toString()
+	@Override
+	public String toString() {
+		return "Member [no=" + no + ", id=" + id + ", pw=" + pw + ", name=" + name + ", phone=" + phone + ", email="
+				+ email + ", address=" + address + ", postdate=" + postdate + ", state=" + state + "]";
+	}
+	
+	
 	
 	
 	

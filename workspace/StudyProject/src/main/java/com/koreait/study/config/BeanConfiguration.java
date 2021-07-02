@@ -7,6 +7,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
+import com.koreait.study.command.EmailAuthCodeCommand;
+import com.koreait.study.command.FindIdCommand;
+import com.koreait.study.command.IdCheckCommand;
+import com.koreait.study.command.JoinCommand;
+import com.koreait.study.command.LoginCommand;
+import com.koreait.study.command.LogoutCommand;
 import com.koreait.study.dao.MemberDao;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -42,11 +48,36 @@ public class BeanConfiguration {
 		return new SqlSessionTemplate(sqlSessionFactory());
 	}
 	
-	/*DAO - Bean생성*/
+	/*DAO - Bean생성  */
 	@Bean
 	public MemberDao memberDao() {
 		return new MemberDao();
 	}
 	
 	
+	/* Command - Bean생성  */
+	@Bean
+	public IdCheckCommand idCheckCommand() {
+		return new IdCheckCommand();
+	}
+	@Bean
+	public EmailAuthCodeCommand emailAuthCodeCommand() {
+		return new EmailAuthCodeCommand();
+	}
+	@Bean
+	public JoinCommand joinCommand() {
+		return new JoinCommand();
+	}
+	@Bean
+	public LoginCommand loginCommand() {
+		return new LoginCommand();
+	}
+	@Bean
+	public LogoutCommand logoutCommand() {
+		return new LogoutCommand();
+	}
+	@Bean
+	public FindIdCommand findIdCommand() {
+		return new FindIdCommand();
+	}
 }

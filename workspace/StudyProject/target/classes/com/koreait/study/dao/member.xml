@@ -5,6 +5,41 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.koreait.study.dao.member">
 
+	<!-- 아이디 중복체크 -->
+	<select id="idCheck" resultType="int">
+		SELECT COUNT(ID)
+		  FROM MEMBER
+		 WHERE ID = #{id}
+	</select>
 	
+	<!-- 회원가입 -->
+	<insert id="join">
+		INSERT INTO MEMBER
+		VALUES (MEMBER_SEQ.NEXTVAL, #{id}, #{pw}, #{name}, #{phone}, #{email}, #{address}, SYSDATE, 0)
+	</insert>
+	
+	<!-- 로그인 -->
+	<select id="login" resultType="com.koreait.study.dto.Member">
+		SELECT NO, ID, PW, NAME, PHONE, EMAIL, ADDRESS, POSTDATE
+		  FROM MEMBER
+		 WHERE ID = #{id}
+		   AND PW = #{pw}
+		   AND STATE = 0 
+	</select>
+	
+	<!-- 아이디 찾기 -->
+	<select id="findId" resultType="com.koreait.study.dto.Member">
+		SELECT ID
+		  FROM MEMBER
+		<if test=" email == '' ">
+			WHERE NAME = #{name}
+			  AND PHONE = #{phone}
+			  AND STATE = 0
+		</if>
+		<if test=" email != '' ">
+			WHERE EMAIL = #{email}
+			  AND STATE = 0
+		</if>
+	</select>
 
 </mapper>
