@@ -5,36 +5,55 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>아이디 찾기</title>
+	<link rel="stylesheet" href="resources/asset/css/main.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="  crossorigin="anonymous"> </script>
 	<script>
 		$(document).ready(function(){
-			fn_findLeft();
-			fn_findRight();
+			fn_tapChange();
+			fn_email();
+			fn_findId();
 		}) //페이지 로드 이벤트 (종료)
 		
 		/* 함수 생성 */
 		
-		function fn_findLeft(){
-			$('#f1').submit(function(event){
-				if ($('#name').val() == '' || $('#phone').val() == '') {
-					alert('이름과 전화번호를 입력해주세요.');
-					event.preventDefault();
-					return false;
-				}
+		function fn_tapChange() {
+			$('#tap1').click(function(){
+				$('input:radio[name="tap"]').attr('checked', false); // 초기화
+				$('input:radio[name="tap"][value="'+ $('#tap1').val() +'"]').attr('checked', true);
+				//$('input:radio[name="tap"]').attr('checked');
+				$('#tap_box1').removeClass('none');
+				$('#tap_box2').addClass('none');
 			});
-		} /* [END]fn_findLeft() */
-		
+			$('#tap2').click(function(){
+				$('input:radio[name="tap"]').attr('checked', false); // 초기화
+				$('input:radio[name="tap"][value="'+ $('#tap2').val() +'"]').attr('checked', true); 
+				//$('input:radio[name="tap"]').attr('checked');
+				$('#tap_box2').removeClass('none');
+				$('#tap_box1').addClass('none');
+			});
+		} /* [END]fn_tapChange() */
+		 
 		
 		var emailCheck = false;
-		function fn_findRight() {
-			fn_email();
-			$('#f2').submit(function(){
-				if (!emailCheck) {
-					alert('이메일을 인증하세요.');
-					return false;
+		function fn_findId(){
+			$('#f').submit(function(event){
+				if ( $('input:radio[name="tap"]:checked').val() == $('#tap1').val() ) {
+					if ($('#name').val() == '' || $('#phone').val() == '') {
+						alert('이름과 전화번호를 입력해주세요.');
+						event.preventDefault();
+						return false;
+					}
+				} else if($('input:radio[name="tap"]:checked').val() == $('#tap2').val()) {
+					if ( $('#email').val() == '' || !emailCheck ) {
+						alert('이메일을 인증하세요.');
+						event.preventDefault();
+						return false;
+					}
 				}
 			});
-		} /* [END]fn_findRgiht() */
+		} /* [END]fn_findId() */
+		
+		
 		// 이메일 인증
 		function fn_email() {
 			// 인증번호 이메일로 보내기
@@ -96,50 +115,53 @@
 </head>
 <body>
 
-	<div class="container">
+	<div id="findId" class="container con">
 	
 		<header>
 			<h1>Find ID</h1>
 		</header>
 		
 		<section>
-			<div id="left">
-				<h3>이름 + 전화번호로 찾기</h3>
-				<form id="f1" action="findId.do" method="post">
+			<form id="f" action="findId.do" method="post">
+				
+				<div class="tap_radio">
+					<input type="radio" name="tap" id="tap1" value="findId_name_phone" checked>
+					<label for="tap1" class="tap_tit">이름 + 전화번호로 찾기</label>
+					<input type="radio" name="tap" id="tap2" value="findId_email">
+					<label for="tap2" class="tap_tit">이메일로 찾기</label>
+				</div>
+				
+				<div id="tap_box1" class="box">
 					<input type="text" name="name" id="name" placeholder="Name">
 					<br>
 					<input type="text" name="phone" id="phone" placeholder="Phone (010-0000-0000) ">
 					<br>
 					<button>아이디 찾기</button>
-				</form>
-			</div>
-			
-			<div id="right">
-				<h3>이메일로 찾기</h3>
-				<form id="f2" action="findId.do" method="post">
-					<input type="text" name="email" id="email" placeholder="이메일 입력">
-					<span> @ </span>
-					<select name="site" id="site">
-						<option value="">:::선택:::</option>
-						<option value="@naver.com">naver.com</option>
-						<option value="@gamil.com">gamil.com</option>
-						<option value="@daum.net">daum.net</option>
-						<option value="@nate.com">nate.com</option>
-					</select> 
-					<input type="button" value="인증번호 받기" id="email_authCode_btn">
-					<br>
-					<input type="text" name="email_check" id="email_check" placeholder="인증번호 입력">
-					<input type="button" value="인증하기" id="email_authCode_check_btn">
-					<button>아이디 찾기</button>
-				</form>
-			</div>
+				</div>
+				
+				<div id="tap_box2" class="box none">
+						<input type="text" name="email" id="email" placeholder="이메일 입력">
+						<span> @ </span>
+						<select name="site" id="site">
+							<option value="">:::선택:::</option>
+							<option value="@naver.com">naver.com</option>
+							<option value="@gamil.com">gamil.com</option>
+							<option value="@daum.net">daum.net</option>
+							<option value="@nate.com">nate.com</option>
+						</select> 
+						<input type="button" value="인증번호 받기" id="email_authCode_btn">
+						<br>
+						<input type="text" name="email_check" id="email_check" placeholder="인증번호 입력">
+						<input type="button" value="인증하기" id="email_authCode_check_btn">
+						<button>아이디 찾기</button>
+				</div>
+			</form>
 		</section>
 		
-		<hr>
 		
 		<footer>
 			<div class="back_page">
-				<a href="index.do">로그인화면으로 돌아가기</a>
+				<a href="loginPage.do">로그인화면으로 돌아가기</a>
 			</div>
 		</footer>
 			

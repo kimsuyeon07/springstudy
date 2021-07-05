@@ -49,7 +49,7 @@ public class JoinCommand implements MemberCommand {
 			if (result > 0) {
 				response.getWriter().println("<script>");
 				response.getWriter().println("alert('회원가입이 완료되었습니다.')");
-				response.getWriter().println("location.href='index.do'");
+				response.getWriter().println("location.href='loginPage.do'");
 				response.getWriter().println("</script>");
 				
 			} else {

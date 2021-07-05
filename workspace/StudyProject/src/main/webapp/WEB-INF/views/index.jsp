@@ -6,6 +6,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Home</title>
+	<link rel="stylesheet" href="resources/asset/css/main.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="  crossorigin="anonymous"> </script>
 	<script>
 	
@@ -20,20 +21,24 @@
 </head>
 <body>
 
-	<div class="container">
+	<div id="index" class="container">
 	
-		<header></header>
+		<header>
+			<div class="nav">
+				<c:if test="${empty loginUser}">
+					<a href="loginPage.do">로그인</a>
+				</c:if>
+				<c:if test="${not empty loginUser}">
+					<p> ${loginUser.name}님  환영합니다!  :)</p>
+					<a href="logout.do">로그아웃</a>
+					<a href="myPage.do">마이페이지</a>
+				</c:if>
+				<a href="boardPage.do">게시판</a>
+			</div>
+		</header>
 		
 		<section>
 			
-			<c:if test="${empty loginUser}">
-				<a href="loginPage.do">로그인</a>
-			</c:if>
-			<c:if test="${not empty loginUser}">
-				<p> ${loginUser.name}님  환영합니다!  :)</p>
-				<a href="logout.do">로그아웃</a>
-				<a href="myPage.do">마이페이지</a>
-			</c:if>
 			
 		</section>
 		

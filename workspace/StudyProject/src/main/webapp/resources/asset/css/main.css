@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+*{
+	margin: 0 auto;
+	padding: 0;
+	text-decoration: none;
+	box-sizing: border-box;
+	font-size:15px;
+	border-collapse: collapse;
+}
+
+/* 공통 CSS */
+body{width:100%;}
+.container { width: 900px; }
+.none {display:none;}
+header {margin-top: 50px;}
+h1 {text-align: center; margin-bottom:50px; font-size:40px;}
+input, button {outline:none; border:1px solid lightgray; height:50px;}
+input[type="text"],input[type="password"]{ width: 100%; padding-left:10px; margin-bottom: 20px;}
+input[type="button"], button {background-color: white;}
+input[type="button"]:hover, button:hover {border:none; background-color:black; color:white;}
+
+
+/* INDEX */
+#index {}
+#index .nav {text-align:center; border-bottom:1px solid #d2d2d2;}
+#index a {
+	display: inline-block;
+	margin: 0 25px;
+	padding: 25px 0;
+	color: black;
+}
+#index a:hover {
+	color: pink;
+	font-weigth: 600;
+	padding-bottom: 22px;
+	border-bottom: 3px solid pink;
+}
+
+/* LOGIN */
+#login{}
+#login section {width: 450px;}
+.con button {
+	width: 100%; 
+	background-color:black; 
+	color:white;
+	font-size:16px;
+	fint-weight: 600;
+	border: none;
+	cursor: pointer;
+}
+#login footer {
+	margin-top: 50px;
+	border-top: 1px solid lightgray;
+}
+#login .position_a {
+	text-align: center;
+	margin-top: 20px;
+}
+#login .position_a a {
+	color: gray;
+}
+#login .position_a a:hover {color:black;}
+#login .position_a span {
+	font-size:13px; color: #999;
+	padding: 0 10px;
+}
+
+/* FINDID */
+#findId{}
+#findId section {width:700px;}
+#findId form {text-align:center; border: 1px solid gray;}
+#findId .tap_radio{width: 100%; height: 50px; display:flex;}
+.tap_radio .tap_tit {
+	width:50%;
+	display: inline-block;
+	border: 1px solid gray;
+	border-bottom: 3px solid black;
+	font-weight: 700;
+	font-size:18px;
+	line-height:48px;
+}
+#findId .tap_radio input {display:none;}
+#findId .box {margin: 60px 0;}
+
+#findId button, #findId input[type="text"] {
+	width: 450px;
+}
+#findId footer {width: 700ox; margin-top: 20px;}
+#findId .back_page {
+	text-align: center;
+	margin-top: 20px;
+}
+#findId .back_page a {
+	color: gray;
+}
+#findId .back_page a:hover {color:black;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

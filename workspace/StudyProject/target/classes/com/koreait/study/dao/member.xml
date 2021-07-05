@@ -31,15 +31,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findId" resultType="com.koreait.study.dto.Member">
 		SELECT ID
 		  FROM MEMBER
-		<if test=" email == '' ">
+		<if test=" tap == 'findId_name_phone' ">
 			WHERE NAME = #{name}
 			  AND PHONE = #{phone}
 			  AND STATE = 0
 		</if>
-		<if test=" email != '' ">
+		<if test=" tap == 'findId_email' ">
 			WHERE EMAIL = #{email}
 			  AND STATE = 0
 		</if>
 	</select>
+	
+	<!-- 비밀번호 찾기 -->
+	<select id="findPw" resultType="com.koreait.study.dto.Member">
+		SELECT PW
+		  FROM MEMBER
+		 WHERE ID = #{id}
+		   AND EMAIL = #{email}
+	</select>
+	
+	<!-- 회원 탈퇴 -->
+	<update id="deleteMember">
+		UPDATE MEMBER
+		   SET STATE = -1
+		 WHERE NO = #{no} 
+	</update>
 
 </mapper>

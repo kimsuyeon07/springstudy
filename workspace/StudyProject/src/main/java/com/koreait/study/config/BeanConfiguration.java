@@ -7,8 +7,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
+import com.koreait.study.command.DeleteMemberCommand;
 import com.koreait.study.command.EmailAuthCodeCommand;
 import com.koreait.study.command.FindIdCommand;
+import com.koreait.study.command.FindPwCommand;
 import com.koreait.study.command.IdCheckCommand;
 import com.koreait.study.command.JoinCommand;
 import com.koreait.study.command.LoginCommand;
@@ -79,5 +81,13 @@ public class BeanConfiguration {
 	@Bean
 	public FindIdCommand findIdCommand() {
 		return new FindIdCommand();
+	}
+	@Bean
+	public FindPwCommand findPwCommand() {
+		return new FindPwCommand();
+	}
+	@Bean
+	public DeleteMemberCommand deleteMemberCommand() {
+		return new DeleteMemberCommand();
 	}
 }

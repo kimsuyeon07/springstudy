@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 
 import com.koreait.study.dao.MemberDao;
+import com.koreait.study.dto.FindQueryDTO;
 import com.koreait.study.dto.Member;
 
 public class FindIdCommand implements MemberCommand {
@@ -23,19 +24,24 @@ public class FindIdCommand implements MemberCommand {
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest)map.get("request");
 		
+		String tap = request.getParameter("tap");
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
 		String email = request.getParameter("email") + request.getParameter("site");
+		System.out.println("이메일 : "+email);
+	
+		FindQueryDTO findQueryDTO = new FindQueryDTO();
+		findQueryDTO.setName(name);
+		findQueryDTO.setPhone(phone);
+		findQueryDTO.setEmail(email);
+		findQueryDTO.setTap(tap);
 		
-		Member member = new Member();
-		member.setName(name);
-		member.setPhone(phone);
-		member.setEmail(email);
+		List<Member> listId = memberDAO.findId(findQueryDTO);
 		
-		List<Member> listId = memberDAO.findId(member);
+		System.out.println(listId.toString());
 		
 		model.addAttribute("findId", listId);
-		if (email == "") {
+		if (email.isEmpty()) {
 			model.addAttribute("name", name);
 			model.addAttribute("phone", phone);
 		} else {

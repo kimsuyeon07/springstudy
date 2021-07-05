@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.koreait.study.dto.FindQueryDTO;
 import com.koreait.study.dto.Member;
 
 @Repository
@@ -24,9 +25,14 @@ public class MemberDao {
 	public Member login(Member member) {
 		return sqlSession.selectOne("com.koreait.study.dao.member.login", member);
 	}
-	public List<Member> findId(Member member) {
-		return sqlSession.selectList("com.koreait.study.dao.member.login", member);
+	public List<Member> findId(FindQueryDTO findQueryDTO) {
+		return sqlSession.selectList("com.koreait.study.dao.member.findId", findQueryDTO);
 	}
-	
+	public Member findPw(FindQueryDTO findQueryDTO) {
+		return sqlSession.selectOne("com.koreait.study.dao.member.findPw", findQueryDTO);
+	}
+	public int deleteMember(long no) {
+		return sqlSession.update("com.koreait.study.dao.member.deleteMember", no);
+	}
 	
 }
