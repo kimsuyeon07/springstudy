@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.koreait.study.dao.galleryBoard">
+
+	<!-- 갤러리게시글 목록 반환 -->
+	<select id="galleryBoardList" resultType="com.koreait.study.dto.GalleryBoard">
+		SELECT B.RN, B.NO, B.ID, B.TITLE, B.CONTENT, B.POSTDATE, B.LASTDATE, B.IP, B.HIT, B.IMAGENAME
+		  FROM (SELECT ROWNUM AS RN, A.NO, A.ID, A.TITLE, A.CONTENT, A.POSTDATE, A.LASTDATE, A.IP, A.HIT, A.IMAGENAME
+		  		  FROM (SELECT NO, ID, TITLE, CONTENT, POSTDATE, LASTDATE, IP, HIT, IMAGENAME
+		  		  		  FROM GALLERY_BOARD
+		  		  		 ORDER BY NO DESC) A) B
+		 WHERE B.RN BETWEEN #{beginRecord} AND ${endRecord}
+	</select>
+	<!-- 갤러리게시글 총 개수 -->
+	<select id="galleryBoardTotal" resultType="int">
+		SELECT COUNT(NO)
+		  FROM GALLERY_BOARD
+	</select>
+	
+	<!-- 갤러리게시글 생성 -->
+	<insert id="insertGallery">
+		INSERT INTO GALLERY_BOARD
+		VALUES (GALLERY_BOARD_SEQ.NEXTVAL, #{id}, #{title}, #{content}, SYSDATE, SYSDATE, #{ip}, '0', #{imagename} )
+	</insert>
+	
+	<!-- 갤러리게시글 한개 반환 -->
+	<select id="galleryBoardView" resultType="com.koreait.study.dto.GalleryBoard">
+		SELECT NO, ID, TITLE, CONTENT, POSTDATE, LASTDATE, IP, HIT, IMAGENAME
+		  FROM GALLERY_BOARD
+		 WHERE NO = #{no}
+	</select>
+	<!-- 클릭 시, 조회수 증가 -->
+	<update id="updateHitGallery">
+		UPDATE GALLERY_BOARD
+		   SET HIT = HIT + 1
+		 WHERE NO = #{no}
+		   AND ID != #{id}
+	</update>
+	
+
+</mapper>

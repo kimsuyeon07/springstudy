@@ -17,14 +17,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.koreait.study.command.DeleteMemberCommand;
-import com.koreait.study.command.EmailAuthCodeCommand;
-import com.koreait.study.command.FindIdCommand;
-import com.koreait.study.command.FindPwCommand;
-import com.koreait.study.command.IdCheckCommand;
-import com.koreait.study.command.JoinCommand;
-import com.koreait.study.command.LoginCommand;
-import com.koreait.study.command.LogoutCommand;
+import com.koreait.study.command.member.DeleteMemberCommand;
+import com.koreait.study.command.member.EmailAuthCodeCommand;
+import com.koreait.study.command.member.FindIdCommand;
+import com.koreait.study.command.member.FindPwCommand;
+import com.koreait.study.command.member.IdCheckCommand;
+import com.koreait.study.command.member.JoinCommand;
+import com.koreait.study.command.member.LoginCommand;
+import com.koreait.study.command.member.LogoutCommand;
 
 @Controller
 public class MemberController {

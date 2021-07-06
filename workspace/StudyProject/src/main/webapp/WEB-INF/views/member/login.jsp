@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Login</title>
-	<link rel="stylesheet" href="resources/asset/css/main.css">
+	<link rel="stylesheet" href="resources/asset/css/study.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="  crossorigin="anonymous"> </script>
 	<script>
 	
@@ -32,14 +32,14 @@
 	<div id="login" class="container con">
 	
 		<header>
-			<h1>LOGIN</h1>
+			<h1><a href="index.do" class="en_B_lt">LOGIN</a></h1>
 		</header>
 		
 		<section>
 			<form id="f" action="login.do" method="post">
-				<input type="text" name="id" id="id" placeholder="ID">
+				<input type="text" name="id" id="id" placeholder="ID"  class="en_R">
 				<br>
-				<input type="password" name="pw" id="pw" placeholder="PassWord">
+				<input type="password" name="pw" id="pw" placeholder="PassWord"  class="en_R">
 				<br>
 				<button>로그인</button>
 			</form>

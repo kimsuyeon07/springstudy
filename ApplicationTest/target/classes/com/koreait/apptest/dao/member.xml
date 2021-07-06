@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.koreait.apptest.dao.member">
+
+	<select id="login" resultType="com.koreait.apptest.dto.Member">
+		SELECT NO, ID, PW, NAME, EMAIL, REGDATE
+		  FROM MEMBER
+		 WHERE ID = #{id}
+		   AND PW = #{pw} 
+	</select>
+	
+	<select id="idCheck" resultType="int">
+		SELECT COUNT(ID)
+		  FROM MEMBER
+		 WHERE ID = #{id}
+	</select>
+	
+	<insert id="join">
+		INSERT INTO MEMBER
+		VALUES (MEMBER_SEQ.NEXTVAL, #{id}, #{pw}, #{name}, #{email}, SYSDATE)
+	</insert>
+	
+	<delete id="leave">
+		DELETE
+		  FROM MEMBER
+		 WHERE NO = #{no}
+	</delete>
+	
+</mapper>

@@ -6,7 +6,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Home</title>
-	<link rel="stylesheet" href="resources/asset/css/main.css">
+	<link rel="stylesheet" href="resources/asset/css/study.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="  crossorigin="anonymous"> </script>
 	<script>
 	
@@ -33,7 +33,7 @@
 					<a href="logout.do">로그아웃</a>
 					<a href="myPage.do">마이페이지</a>
 				</c:if>
-				<a href="boardPage.do">게시판</a>
+				<a href="galleryBoardPage.do">게시판</a>
 			</div>
 		</header>
 		

@@ -5,6 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>비밀번호 찾기</title>
+	<link rel="stylesheet" href="resources/asset/css/study.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="  crossorigin="anonymous"> </script>
 	<script>
 		$(document).ready(function(){
@@ -88,19 +89,14 @@
 		
 		
 	</script>
-	
-	<style>
-		*{marign:0 auto; padding: 0;}
-		h1 {}
-		#f {}
-	</style>
+
 </head>
 <body>
 
-	<div class="container">
+	<div id="findPw" class="container con find">
 	
 		<header>
-			<h1>Find PW</h1>
+			<h1 class="en_B_lt">FIND PW</h1>
 		</header>
 		
 		<section>
@@ -109,32 +105,32 @@
 				<div id="tap_box" class="box">
 					<input type="text" name="id" id="id" placeholder="ID입력">
 					<br>
-					<input type="text" name="email" id="email" placeholder="Email 입력">
-					<span> @ </span>
-					<select name="site" id="site">
-						<option value="">:::선택:::</option>
-						<option value="@naver.com">naver.com</option>
-						<option value="@gamil.com">gamil.com</option>
-						<option value="@daum.net">daum.net</option>
-						<option value="@nate.com">nate.com</option>
-					</select> 
-					<input type="button" value="인증번호 받기" id="email_authCode_btn">
-					<br>
-					<input type="text" name="email_check" id="email_check" placeholder="인증번호 입력">
-					<input type="button" value="인증하기" id="email_authCode_check_btn">
-					<br>
+					<div class="email_box box1">
+							<input type="text" name="email" id="email" placeholder="이메일 입력">
+							<span> @ </span>
+							<select name="site" id="site">
+								<option value="">:::선택:::</option>
+								<option value="@naver.com">naver.com</option>
+								<option value="@gamil.com">gamil.com</option>
+								<option value="@daum.net">daum.net</option>
+								<option value="@nate.com">nate.com</option>
+							</select> 
+							<input type="button" value="인증번호 받기" id="email_authCode_btn">
+						</div>
+
+						<div class="email_box box2">
+							<input type="text" name="email_check" id="email_check" placeholder="인증번호 입력">
+							<input type="button" value="인증하기" id="email_authCode_check_btn">
+						</div>
 					<button>비밀번호 찾기</button>
+				</div>
+				<div class="back_page">
+					<a href="loginPage.do">로그인화면으로 돌아가기</a>
 				</div>
 			</form>
 		</section>
-		
-		<hr>
-		
-		<footer>
-			<div class="back_page">
-				<a href="loginPage.do">로그인화면으로 돌아가기</a>
-			</div>
-		</footer>
+
+		<footer></footer>
 			
 	</div>
 

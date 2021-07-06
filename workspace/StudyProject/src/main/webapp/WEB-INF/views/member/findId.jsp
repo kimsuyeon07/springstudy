@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>아이디 찾기</title>
-	<link rel="stylesheet" href="resources/asset/css/main.css">
+	<link rel="stylesheet" href="resources/asset/css/study.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="  crossorigin="anonymous"> </script>
 	<script>
 		$(document).ready(function(){
@@ -20,14 +20,16 @@
 			$('#tap1').click(function(){
 				$('input:radio[name="tap"]').attr('checked', false); // 초기화
 				$('input:radio[name="tap"][value="'+ $('#tap1').val() +'"]').attr('checked', true);
-				//$('input:radio[name="tap"]').attr('checked');
+				$('#tap1').next().addClass('tap_click');
+				$('#tap2').next().removeClass('tap_click');
 				$('#tap_box1').removeClass('none');
 				$('#tap_box2').addClass('none');
 			});
 			$('#tap2').click(function(){
 				$('input:radio[name="tap"]').attr('checked', false); // 초기화
 				$('input:radio[name="tap"][value="'+ $('#tap2').val() +'"]').attr('checked', true); 
-				//$('input:radio[name="tap"]').attr('checked');
+				$('#tap2').next().addClass('tap_click');
+				$('#tap1').next().removeClass('tap_click');
 				$('#tap_box2').removeClass('none');
 				$('#tap_box1').addClass('none');
 			});
@@ -115,10 +117,10 @@
 </head>
 <body>
 
-	<div id="findId" class="container con">
+	<div id="findId" class="container con find">
 	
 		<header>
-			<h1>Find ID</h1>
+			<h1 class="en_B_lt">FIND ID</h1>
 		</header>
 		
 		<section>
@@ -126,44 +128,49 @@
 				
 				<div class="tap_radio">
 					<input type="radio" name="tap" id="tap1" value="findId_name_phone" checked>
-					<label for="tap1" class="tap_tit">이름 + 전화번호로 찾기</label>
+					<label for="tap1" class="tap_tit tap_click">이름 + 전화번호로 찾기</label>
 					<input type="radio" name="tap" id="tap2" value="findId_email">
 					<label for="tap2" class="tap_tit">이메일로 찾기</label>
 				</div>
 				
 				<div id="tap_box1" class="box">
-					<input type="text" name="name" id="name" placeholder="Name">
+					<input type="text" name="name" id="name" placeholder="Name" class="en_R">
 					<br>
-					<input type="text" name="phone" id="phone" placeholder="Phone (010-0000-0000) ">
+					<input type="text" name="phone" id="phone" placeholder="Phone (010-0000-0000) " class="en_R">
 					<br>
 					<button>아이디 찾기</button>
 				</div>
 				
 				<div id="tap_box2" class="box none">
-						<input type="text" name="email" id="email" placeholder="이메일 입력">
-						<span> @ </span>
-						<select name="site" id="site">
-							<option value="">:::선택:::</option>
-							<option value="@naver.com">naver.com</option>
-							<option value="@gamil.com">gamil.com</option>
-							<option value="@daum.net">daum.net</option>
-							<option value="@nate.com">nate.com</option>
-						</select> 
-						<input type="button" value="인증번호 받기" id="email_authCode_btn">
-						<br>
-						<input type="text" name="email_check" id="email_check" placeholder="인증번호 입력">
-						<input type="button" value="인증하기" id="email_authCode_check_btn">
+						<div class="email_box box1">
+							<input type="text" name="email" id="email" placeholder="이메일 입력">
+							<span> @ </span>
+							<select name="site" id="site">
+								<option value="">:::선택:::</option>
+								<option value="@naver.com">naver.com</option>
+								<option value="@gamil.com">gamil.com</option>
+								<option value="@daum.net">daum.net</option>
+								<option value="@nate.com">nate.com</option>
+							</select> 
+							<input type="button" value="인증번호 받기" id="email_authCode_btn">
+						</div>
+
+						<div class="email_box box2">
+							<input type="text" name="email_check" id="email_check" placeholder="인증번호 입력">
+							<input type="button" value="인증하기" id="email_authCode_check_btn">
+						</div>
 						<button>아이디 찾기</button>
 				</div>
+				
+				<div class="back_page">
+					<a href="loginPage.do" class="L">로그인화면으로 돌아가기</a>
+				</div>	
+				
 			</form>
 		</section>
 		
 		
-		<footer>
-			<div class="back_page">
-				<a href="loginPage.do">로그인화면으로 돌아가기</a>
-			</div>
-		</footer>
+		<footer></footer>
 			
 	</div>
 
