@@ -3,11 +3,13 @@
 <aop-project name="14_FILE"/>
 <aop-project name="11_CONTACT"/>
 <aop-project name="06_MVC_REDIRECT"/>
+<aop-project name="ApplicationTest"/>
 <aop-project name="05_MVC_REQUEST"/>
 <aop-project name="07_MVC_AJAX"/>
 <aop-project name="08_BOARD"/>
 <aop-project name="10_CONTACT"/>
 <aop-project name="03_MVC_OVERVIEW"/>
+<aop-project name="15_1_MEMBER"/>
 <aop-project name="13_CONTACT"/>
 <aop-project name="15_MEMBER"/>
 <aop-project name="17_SEARCH"/>

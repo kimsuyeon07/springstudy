@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		  FROM (SELECT ROWNUM AS RN, A.NO, A.ID, A.TITLE, A.CONTENT, A.POSTDATE, A.LASTDATE, A.IP, A.HIT, A.IMAGENAME
 		  		  FROM (SELECT NO, ID, TITLE, CONTENT, POSTDATE, LASTDATE, IP, HIT, IMAGENAME
 		  		  		  FROM GALLERY_BOARD
-		  		  		 ORDER BY NO DESC) A) B
+		  		  		 ORDER BY HIT DESC) A) B
 		 WHERE B.RN BETWEEN #{beginRecord} AND ${endRecord}
 	</select>
 	<!-- 갤러리게시글 총 개수 -->
@@ -38,6 +38,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		   SET HIT = HIT + 1
 		 WHERE NO = #{no}
 		   AND ID != #{id}
+	</update>
+	
+	<!-- 갤러리게시글 수정 -->
+	<update id="updateGallery">
+		UPDATE GALLERY_BOARD
+		   SET TITLE = #{title}, CONTENT = #{content}, LASTDATE = SYSDATE, IMAGENAME = #{imagename}
+		 WHERE NO = #{no}
 	</update>
 	
 

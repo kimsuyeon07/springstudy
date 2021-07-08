@@ -7,6 +7,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Insert title here</title>
 	<link rel="stylesheet" href="resources/asset/css/study.css">
+	<link rel="stylesheet" href="resources/asset/css/find_Id_Pw.css">
 </head>
 <body>
 

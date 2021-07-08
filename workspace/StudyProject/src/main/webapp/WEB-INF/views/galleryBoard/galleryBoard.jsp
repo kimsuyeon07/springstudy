@@ -6,6 +6,10 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>GalleryBoard</title>
+	<link rel="stylesheet" href="resources/asset/css/study.css">
+	<link rel="stylesheet" href="resources/asset/css/galleryList.css">
+	<link rel="stylesheet" href="resources/asset/css/paging.css">
+	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="  crossorigin="anonymous"> </script>
 	<script>
 	
@@ -23,7 +27,6 @@
 				data: 'page=' + page,
 				dataType: 'json',
 				success: function(resultMap){
-					console.log(resultMap);
 					fn_table_append(resultMap);
 				}
 			}) //$.ajax
@@ -37,7 +40,7 @@
 					$('<tr>')
 					.append( $('<td>').text(galleryBoard.no) )
 					.append( $('<td>').text(galleryBoard.id) )
-					.append( $('<td>').html('<a href="galleryBoardView.do?no='+ galleryBoard.no +'&id='+ galleryBoard.id +'">galleryBoard.title</a>') )
+					.append( $('<td>').html('<a href="galleryBoardView.do?no='+ galleryBoard.no +'&id=${loginUser.id}">'+ galleryBoard.title + '</a>') )
 					.append( $('<td>').text(galleryBoard.hit) )
 					.append( $('<td>').text(galleryBoard.lastdate) )
 					.appendTo('#galleryBoard_list');
@@ -49,7 +52,6 @@
 			}
 			/* success in 페이징 처리 */ 
 			var paging = resultMap.paging;
-			console.log(paging);
 			$('#paging').empty();
 			// ◀
 			if (paging.beginPage <= paging.pagePerBlock) { 
@@ -110,35 +112,41 @@
 </head>
 <body>
 
-	<div class="container">
-		<h1>GALLERY BOARD</h1>
-		
-		<c:if test="${not empty loginUser}">
-			<div id="insert">
-				<a href="insert_galleryBoardPage.do"> 갤러리 게시글 작성하러 가기 </a>
+	<div id="galleryList" class="container">
+	
+		<header>
+			<h1 class="en_B_lt">GALLERY BOARD</h1>
+		</header>
+
+		<section>
+			<div id="back" class="link_box">
+				<a href="index.do" class="L"> 뒤로 가기 </a>
 			</div>
-		</c:if>
-		<div id="back">
-			<a href="index.do"> 뒤로 가기 </a>
-		</div>
-		
-		<table border="1">
-			<thead>
-				<tr>
-					<td>순번</td>
-					<td>작성자</td>
-					<td>제목</td>
-					<td>조회수</td>
-					<td>최종수정일</td>
-				</tr>
-			</thead>
-			<tbody id="galleryBoard_list"></tbody>
-			<tfoot>
-				<tr>
-					<td colspan="5" id="paging"></td>
-				</tr>
-			</tfoot>
-		</table>
+			<c:if test="${not empty loginUser}">
+				<div id="insert" class="link_box">
+					<a href="insert_galleryBoardPage.do" class="L"> 갤러리 게시글 작성하러 가기 </a>
+				</div>
+			</c:if>
+			
+			<table id="galleryTable">
+				<thead>
+					<tr>
+						<td>순번</td>
+						<td>작성자</td>
+						<td>제목</td>
+						<td>조회수</td>
+						<td>최종수정일</td>
+					</tr>
+				</thead>
+				<tbody id="galleryBoard_list"></tbody>
+				<tfoot>
+					<tr>
+						<td colspan="5" id="paging"></td>
+					</tr>
+				</tfoot>
+			</table>
+		</section>	
+			
 	</div>
 
 </body>

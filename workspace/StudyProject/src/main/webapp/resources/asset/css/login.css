@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/* LOGIN */
+#login{}
+#login h1 a {font-size:60px; color:black;}
+#login input {font-size:17px;}
+#login section {width: 450px;}
+#login footer {
+	margin-top: 50px;
+	border-top: 1px solid lightgray;
+}
+#login .position_a {
+	text-align: center;
+	margin-top: 20px;
+}
+#login .position_a a {
+	color: gray;
+}
+#login .position_a a:hover {color:black;}
+#login .position_a span {
+	font-size:13px; color: #999;
+	padding: 0 10px;
+}

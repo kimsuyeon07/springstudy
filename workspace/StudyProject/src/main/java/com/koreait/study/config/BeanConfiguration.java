@@ -11,6 +11,8 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import com.koreait.study.command.galleryBoard.GalleryBoardListCommand;
 import com.koreait.study.command.galleryBoard.GalleryBoardViewCommand;
 import com.koreait.study.command.galleryBoard.InsertGalleryCommand;
+import com.koreait.study.command.galleryBoard.TextareaCheckCommand;
+import com.koreait.study.command.galleryBoard.UpdateGalleryCommand;
 import com.koreait.study.command.member.DeleteMemberCommand;
 import com.koreait.study.command.member.EmailAuthCodeCommand;
 import com.koreait.study.command.member.FindIdCommand;
@@ -19,6 +21,9 @@ import com.koreait.study.command.member.IdCheckCommand;
 import com.koreait.study.command.member.JoinCommand;
 import com.koreait.study.command.member.LoginCommand;
 import com.koreait.study.command.member.LogoutCommand;
+import com.koreait.study.command.reply.DeleteReplyCommand;
+import com.koreait.study.command.reply.InsertReplyCommand;
+import com.koreait.study.command.reply.ReplyListCommand;
 import com.koreait.study.dao.GalleryBoardDAO;
 import com.koreait.study.dao.MemberDao;
 import com.zaxxer.hikari.HikariConfig;
@@ -123,10 +128,28 @@ public class BeanConfiguration {
 	public GalleryBoardViewCommand galleryBoardViewCommand() {
 		return new GalleryBoardViewCommand();
 	}
+	@Bean
+	public UpdateGalleryCommand updateGalleryCommand() {
+		return new UpdateGalleryCommand();
+	}
+	@Bean
+	public TextareaCheckCommand textareaCheckCommand() {
+		return new TextareaCheckCommand();
+	}
 	
-	
-	
-	
+	/* Command - (Reply) Bean생성  */
+	@Bean
+	public ReplyListCommand replyListCommand() {
+		return new ReplyListCommand();
+	}
+	@Bean
+	public InsertReplyCommand insertReplyCommand() {
+		return new InsertReplyCommand();
+	}
+	@Bean
+	public DeleteReplyCommand deleteReplyCommand() {
+		return new DeleteReplyCommand();
+	}
 	
 	
 	

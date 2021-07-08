@@ -29,7 +29,7 @@
 					<a href="loginPage.do">로그인</a>
 				</c:if>
 				<c:if test="${not empty loginUser}">
-					<p> ${loginUser.name}님  환영합니다!  :)</p>
+					<p> <span class="en_B_lt">${loginUser.name}</span>님  환영합니다!  :)</p>
 					<a href="logout.do">로그아웃</a>
 					<a href="myPage.do">마이페이지</a>
 				</c:if>

@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+#updateGallery, #insertGallery {width:650px;}
+header {}
+section {}
+footer {}
+
+#f span {
+	display:inline-block;
+	padding-bottom:5px;
+	font-size:14px;
+}
+#f #btn {text-align:right;}
+#f #btn input {
+	padding:0 20px; 
+	margin:0 5px;
+	margin-bottom:20px;
+	height:45px;
+}
+#f #id_box {}
+#f #id_box #id {color:#888; font-size:20px;}
+#f #id_box #id:focus {border:1px solid lightgray;}
+#f #title_box {}
+#f #file_box {margin-bottom:10px;}
+#f #file_box span {padding-right:10px;}
+#f #file_box input[type="file"] {
+	border:none;
+	height:100%;
+}
+#f #content_box {}
+#f #content_box textarea {height:550px;}
+#f #img_box {margin-bottom:50px;}
+#f #img_box img {width:100%;}
+#f #update_btn, button {
+	width:100%;
+	background-color:black;
+	color:white;
+	border:none;
+	margin-bottom:150px;
+	height:55px;
+}
+
+
+
+
+
+
+
+

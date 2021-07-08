@@ -17,6 +17,8 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.koreait.study.command.galleryBoard.GalleryBoardListCommand;
 import com.koreait.study.command.galleryBoard.GalleryBoardViewCommand;
 import com.koreait.study.command.galleryBoard.InsertGalleryCommand;
+import com.koreait.study.command.galleryBoard.TextareaCheckCommand;
+import com.koreait.study.command.galleryBoard.UpdateGalleryCommand;
 
 @Controller
 public class GalleryBoardController {
@@ -25,17 +27,23 @@ public class GalleryBoardController {
 	private GalleryBoardListCommand galleryBoardListCommand;
 	private InsertGalleryCommand insertGalleryCommand;
 	private GalleryBoardViewCommand galleryBoardViewCommand;
+	private UpdateGalleryCommand updateGalleryCommand;
+	private TextareaCheckCommand textareaCheckCommand;
 	
 	@Autowired
 	public GalleryBoardController(SqlSession sqlSession,
 								  GalleryBoardListCommand galleryBoardListCommand,
 								  InsertGalleryCommand insertGalleryCommand,
-								  GalleryBoardViewCommand galleryBoardViewCommand) {
+								  GalleryBoardViewCommand galleryBoardViewCommand,
+								  UpdateGalleryCommand updateGalleryCommand,
+								  TextareaCheckCommand textareaCheckCommand) {
 		super();
 		this.sqlSession = sqlSession;
 		this.galleryBoardListCommand = galleryBoardListCommand;
 		this.insertGalleryCommand = insertGalleryCommand;
 		this.galleryBoardViewCommand = galleryBoardViewCommand;
+		this.updateGalleryCommand = updateGalleryCommand;
+		this.textareaCheckCommand = textareaCheckCommand;
 	}
 	
 	
@@ -59,7 +67,7 @@ public class GalleryBoardController {
 		return "galleryBoard/insertGallery";
 	} // -----------------------------------
 	// 새글 작성 - 파일 추가 경우_ "multipartSerlvetRequest"를 사용한다.
-	@PostMapping(value="insert_gallery.do")
+	@PostMapping(value="insertGallery.do")
 	public String insert_gallery(MultipartHttpServletRequest multipartRequest, 
 								 HttpServletResponse response,
 								 Model model) {
@@ -75,9 +83,27 @@ public class GalleryBoardController {
 		galleryBoardViewCommand.execute(sqlSession, model);
 		return "galleryBoard/galleryBoardView";
 	}
-	
-	
-	
+	// 업데이트 페이지 이동
+	@GetMapping(value="updateGalleryPage.do")
+	public String updateGalleryPage(HttpServletRequest request, Model model) {
+		model.addAttribute("request", request);
+		galleryBoardViewCommand.execute(sqlSession, model);
+		return "galleryBoard/updateGallery";
+	}//-------------------------------------
+	@PostMapping(value="updateGallery.do")
+	public String updateGallery(MultipartHttpServletRequest multipartRequest, HttpServletResponse response, Model model) {
+		model.addAttribute("multipartRequest", multipartRequest);
+		model.addAttribute("response", response);
+		updateGalleryCommand.execute(sqlSession, model);
+		return null;
+	}
+	// 업데이트 전 content(내용) 동일한지 검사
+	@GetMapping(value="textareaCheck.do", produces="application/json; charset=UTF-8")
+	@ResponseBody
+	public Map<String, Object> textareaCheck(HttpServletRequest request, Model model) {
+		model.addAttribute("request", request);
+		return textareaCheckCommand.execute(sqlSession, model);
+	}
 	
 	
 	

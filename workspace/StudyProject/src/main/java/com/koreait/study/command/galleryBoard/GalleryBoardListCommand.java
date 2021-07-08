@@ -29,19 +29,16 @@ public class GalleryBoardListCommand {
 		int page = Integer.parseInt(request.getParameter("page"));
 		int totalRecord = galleryBoardDAO.galleryBoardTotal();
 		
-		System.out.println("갤러리게시글 총 수 : "+totalRecord);
-		System.out.println("페이지 : "+page);
-		
 		PagingDTO pagingDTO = PagingUtil.getPage(totalRecord, page);
 		// 페이징에 따라 목록 반환
 		List<GalleryBoard> list = galleryBoardDAO.galleryBoardList(pagingDTO);
 		
 		// 응답 resultMap 생성
 		Map<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap.put("paging", pagingDTO);
 		if (list.size() > 0) {
 			resultMap.put("list", list);
-			resultMap.put("status", 200);
-			resultMap.put("paging", pagingDTO);
+			resultMap.put("status", 200); 
 		} else {
 			resultMap.put("list", null);
 			resultMap.put("status", 500);

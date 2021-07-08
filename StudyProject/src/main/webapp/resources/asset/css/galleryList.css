@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+#galleryList {}
+
+
+
+#galleryList header {margin: 50px 0;}
+#galleryList section { width:100%;}
+
+#galleryList .link_box {display:inline-block;}
+#galleryList .link_box a {display:inline-block; padding: 10px 15px;}
+
+#galleryList #insert {
+	background-color:black;
+	color:white;
+}
+#galleryList #insert a {color:white;}
+#galleryList #back {
+	border:1px solid lightgray;
+	margin-right:10px;
+	margin-left: 100px;
+}
+#galleryList #back:hover {border:none; background-color:black;}
+#galleryList #back a {color:black;}
+#galleryList #back a:hover {color:white;}
+
+
+/* 테이블 CSS */
+
+section #galleryTable {width:700px; margin-top:20px;}
+#galleryTable td {border:1px solid #ddd; height:50px; text-align:center;}
+#galleryTable thead td {font-weight:500;}
+#galleryTable tbody {}
+#galleryTable tabdy td {}
+#galleryTable tfoot div {display:inline-block; margin:0 5px;}
+
+
+
+
+
+
+
+
+
+
+
+

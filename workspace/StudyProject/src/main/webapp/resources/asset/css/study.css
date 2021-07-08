@@ -38,15 +38,18 @@
 body{width:100%;}
 .container { width: 900px; }
 .none {display:none;}
+.clear {clear:both;}
 header {margin-top: 50px;}
 h1 {text-align: center; margin-bottom:50px; font-size:50px;}
 h2 {text-align: center;}
 h3 {text-align: center; font-size:25px;}
-input, select, button {outline:none; border:1px solid lightgray; height:50px;}
-input[type="text"],input[type="password"]{ width: 100%; padding-left:10px; margin-bottom: 20px;}
+a{color:black;}
+input, select, textarea, button {outline:none; border:1px solid lightgray; height:50px;}
+input[type="text"],input[type="password"],textarea { width: 100%; padding-left:10px; margin-bottom: 20px;}
+textarea {padding-top:10px;}
 input[type="button"], button {background-color: white;}
-input[type="button"]:hover, button:hover {border:none; background-color:black; color:white;}
-input:focus, select:focus {border:1px solid black;}
+input[type="button"]:hover, button:hover {border:none; background-color:black; color:white; cursor:pointer;}
+input:focus, select:focus, textarea:focus {border:1px solid black;}
 .tap_click {background-color:black; color:#f2f2f2;}
 .con button {
 	width: 100%; 
@@ -58,6 +61,17 @@ input:focus, select:focus {border:1px solid black;}
 	border: none;
 	cursor: pointer;
 }
+.back_page {
+	text-align: center;
+	margin-bottom:50px;
+}
+.back_page a {
+	color: gray;
+}
+.back_page a:hover {color:black; font-weight:400;}
+
+
+
 
 /* INDEX */
 #index {}
@@ -69,101 +83,35 @@ input:focus, select:focus {border:1px solid black;}
 	color: black;
 }
 #index a:hover {
-	color: pink;
+	color: brown;
 	font-weigth: 600;
 	padding-bottom: 22px;
-	border-bottom: 3px solid pink;
+	border-bottom: 3px solid brown;
+}
+#index p {
+	font-size:20px;
+	color:#555;
+	margin-bottom:20px;
+}
+#index p span {
+	font-size:35px;
+	padding-right:10px;
+	color:brown;
+	text-decoration:underline;
 }
 
-/* LOGIN */
-#login{}
-#login h1 a {font-size:60px; color:black;}
-#login input {font-size:17px;}
-#login section {width: 450px;}
-#login footer {
-	margin-top: 50px;
-	border-top: 1px solid lightgray;
-}
-#login .position_a {
-	text-align: center;
-	margin-top: 20px;
-}
-#login .position_a a {
-	color: gray;
-}
-#login .position_a a:hover {color:black;}
-#login .position_a span {
-	font-size:13px; color: #999;
-	padding: 0 10px;
-}
-
-/* FINDID,FINDPW */
-#findId{}
-#findPw{}
-.find{}
-
-#findId #tap_box1 input {font-size:17px;}
-#findId .tap_radio{width: 100%; height: 60px; display:flex; color:#333;}
-#findId .tap_radio input {display:none;}
-#findId .tap_radio .tap_tit {
-	width:50%;
-	display: inline-block;
-	border-bottom: 3px solid black;
-	font-size:18px;
-	line-height:55px;
-	cursor: pointer;
-}
-#findId form { border-bottom: 1px solid #eee;}
-#findPw form { border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
-
-.find section {width:700px;}
-.find form {text-align:center;}
-.find .box {margin: 60px 0 20px 0;}
-.find .email_box input[type="button"] {
-	background-color: black; 
-	color:white; 
-	border:none; 
-	cursor:pointer;
-}
-.find .email_box {width: 700px;}
-.find .box1 #email {width: 210px;}
-.find .box1 span {margin:0 2px;}
-.find .box1 select {width: 100px; margin-right:5px;}
-.find .box1 #email_authCode_btn {width: 110px;}
-.find .box2 #email_check {width: 360px; margin-right:5px}
-.find .box2 #email_authCode_check_btn {width: 85px;}
-.find button, .find input[type="text"] {
-	width: 450px;
-}
-.find .back_page {
-	text-align: center;
-	margin-bottom:50px;
-}
-.find .back_page a {
-	color: gray;
-}
-.find .back_page a:hover {color:black; font-weight:400;}
 
 
-/* findResult */
-#findResult {width:100%;}
-#findResult .title {margin:50px 0; font-size:45px;}
-#findResult h2 {margin:10px 0; color:brown; font-size:70px;}
-#findResult p {text-align:center; color:#333;}
-#findResult a {
-	text-align:center; 
-	display:block;
-	margin-bottom:20px; 
-	color: gray;
-	border-radius:50px;
-	border:1px solid gray;
-	width:140px;
-	height:35px;
-	line-height:31px;
-	
-}
-#findResult a:hover {background-color:brown; font-weight:400; color:white; border:none;}
-#findResult .find_id {margin-top:50px;}
+
+
+
+
+
+
+
+
+
+
 
 
 

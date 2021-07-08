@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+
+/* JOIN */
+#join {}
+#join #f { width:450px;}
+
+.message{color:red; font-size:14px;}
+.green{color:green;}
+
+/* form CSS */
+#f label {padding-bottom:5px; display:block;}
+#f span {margin-bottom:30px; display:block;}
+
+#f .id_box {display:flex;}
+#f #id {width:290px; margin-right:10px;}
+#f #id_check_btn {width:150px;}
+
+.email_box {width:100%;}
+.email_box .box {display:flex;}
+.email_box .box1 {}
+.email_box .box1 {margin-bottom:10px;}
+.email_box .box1 #email {width:182px;}
+.email_box .box1 span {line-height:50px; margin:0 5px;}
+.email_box .box1 select {width:110px; margin-right:10px;}
+.email_box .box1 #email_authCode_btn {width:124px;}
+.email_box .box2 {}
+.email_box .box2 #email_check {margin-right:10px;}
+.email_box .box2 #email_authCode_check_btn {width:180px;}
+
+/* input CSS */
+#join input[type="text"], #join input[type="password"] {margin-bottom:5px;}
+
+/* button CSS */
+#join_btn {width:100%; height:55px; margin:20px 0 50px 0;}
+#id_check_btn, #email_authCode_btn, #email_authCode_check_btn, #join_btn {
+	background-color: black; 
+	color:white; 
+	border:none; 
+	cursor:pointer;
+	font-size:16px;
+	font-weight:300;
+}
+
+
+.back_page {margin-bottom:150px;}
+
+
+
+
+
+
+

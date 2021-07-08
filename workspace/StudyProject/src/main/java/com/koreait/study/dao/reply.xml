@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.koreait.study.dao.ReplyDAO">
+
+	<!-- 댓글 목록 총 개수 -->
+	<select id="replyTotalCount" resultType="int">
+		SELECT COUNT(NO)
+		  FROM REPLY
+		 WHERE GALLERY_NO = #{param1}
+	</select>
+
+	<!-- 댓글 목록 반환 -->
+	<select id="replyList" resultType="com.koreait.study.dto.Reply">
+		SELECT B.RN, B.NO, B.ID, B.CONTENT, B.POSTDATE, B.IP
+		  FROM (SELECT ROWNUM AS RN, A.NO, A.ID, A.CONTENT, A.POSTDATE, A.IP
+		  		  FROM (SELECT NO, ID, CONTENT, POSTDATE, IP
+		  				  FROM REPLY
+		 				 WHERE GALLERY_NO = #{param1}
+		 				 ORDER BY NO DESC) A) B
+		 WHERE B.RN BETWEEN #{param2} AND #{param3}
+	</select>
+	
+	<!-- 댓글 생성 -->
+	<insert id="insertReply">
+		INSERT INTO REPLY
+		VALUES (REPLY_SEQ.NEXTVAL, #{galleryNo}, #{id}, #{content}, SYSDATE, #{ip})
+	</insert>
+	
+	<!-- 댓글 삭제 -->
+	<delete id="deleteReply">
+		DELETE 
+		  FROM REPLY
+		 WHERE NO = #{param1}
+	</delete>
+
+</mapper>

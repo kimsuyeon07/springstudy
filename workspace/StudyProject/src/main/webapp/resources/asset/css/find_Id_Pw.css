@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/* FINDID,FINDPW */
+#findId{}
+#findPw{}
+.find{}
+
+#findId #tap_box1 input {font-size:17px;}
+#findId .tap_radio{width: 100%; height: 60px; display:flex; color:#333;}
+#findId .tap_radio input {display:none;}
+#findId .tap_radio .tap_tit {
+	width:50%;
+	display: inline-block;
+	border-bottom: 3px solid black;
+	font-size:18px;
+	line-height:55px;
+	cursor: pointer;
+}
+#findId form { border-bottom: 1px solid #eee;}
+#findPw form { border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
+
+.find section {width:700px;}
+.find form {text-align:center;}
+.find .box {margin: 60px 0 20px 0;}
+.find .email_box input[type="button"] {
+	background-color: black; 
+	color:white; 
+	border:none; 
+	cursor:pointer;
+}
+.find .email_box {width: 700px;}
+.find .box1 #email {width: 210px;}
+.find .box1 span {margin:0 2px;}
+.find .box1 select {width: 100px; margin-right:5px;}
+.find .box1 #email_authCode_btn {width: 110px;}
+.find .box2 #email_check {width: 360px; margin-right:5px}
+.find .box2 #email_authCode_check_btn {width: 85px;}
+.find button, .find input[type="text"] {
+	width: 450px;
+}
+
+
+/* findResult */
+#findResult {width:100%;}
+#findResult .title {margin:50px 0; font-size:45px;}
+#findResult h2 {margin:10px 0; color:brown; font-size:70px;}
+#findResult p {text-align:center; color:#333;}
+#findResult a {
+	text-align:center; 
+	display:block;
+	margin-bottom:20px; 
+	color: gray;
+	border-radius:50px;
+	border:1px solid gray;
+	width:140px;
+	height:35px;
+	line-height:31px;
+	
+}
+#findResult a:hover {background-color:brown; font-weight:400; color:white; border:none;}
+#findResult .find_id {margin-top:50px;}
+
+

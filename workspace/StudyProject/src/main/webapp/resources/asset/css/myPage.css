@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+#myPage {}
+
+#myPage h1 {margin:50px 0;}
+
+#myPage section {width:100%; text-align:center;}
+#myPage p {font-size:18px; padding-bottom:15px;}
+#myPage span {font-size:28px;}
+#myPage .kor {font-size:22px;}
+
+#myPage footer {text-align:center; margin: 20px 0 150px 0;}
+#myPage #delete_btn {width:120px; margin-right:10px;}
+#myPage input[value="메인으로 돌아가기"] {width:170px;}
